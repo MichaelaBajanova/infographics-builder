@@ -1,6 +1,9 @@
 .header {
   display: flex;
-  background-color: #BCC0D1;
+  background-color: #00C6CF;
+  box-shadow: 0 3px 1px 0 #00B4BD;
+  position: relative;
+  z-index: 2;
   
   &__user {
     display: flex;
@@ -25,5 +28,6 @@
 
   &__user-name {
     align-self: center;
+    color: #fff;
   }
 }

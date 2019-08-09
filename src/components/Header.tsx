@@ -3,10 +3,10 @@ import '../styles/Header.scss';
 
 class Header extends React.Component {
 
-    render() {
+    render = () => {
         return (
             <header className="header">
-                <User></User>
+                <User/>
             </header>
         )
     }
@@ -14,7 +14,7 @@ class Header extends React.Component {
 
 class User extends React.Component {
 
-    render() {
+    render = () => {
         return (
             <div className="header__user">
                 <div className="header__user-photo-wrapper">
