@@ -1,10 +1,10 @@
 import React from 'react';
 import '../styles/Canvas.scss';
-import {Section} from "../App";
+import {TInfographicsSection} from '../types/TInterfaceSection';
 
 interface IProps {
-    infographicsSections: Section[],
-    createSection: (section: Section) => object
+    infographicsSections: TInfographicsSection[],
+    createSection: (section: TInfographicsSection) => object
 }
 
 const Canvas: React.FunctionComponent<IProps> = (props) => {

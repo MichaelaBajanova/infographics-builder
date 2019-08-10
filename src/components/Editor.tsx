@@ -1,9 +1,9 @@
 import React from 'react';
 import '../styles/Editor.scss'
-import {Section} from "../App";
+import {TInfographicsSection} from '../types/TInterfaceSection';
 
 interface IProps {
-    infographicsSections: Section[],
+    infographicsSections: TInfographicsSection[],
     addSection: () => void,
     deleteSection: (id: number) => void
 }

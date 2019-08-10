@@ -3,16 +3,12 @@ import Header from './components/Header';
 import Editor from './components/Editor';
 import Canvas from './components/Canvas';
 import './styles/App.scss';
-import InfographicsSection from "./components/InfographicsSection";
-
-export interface Section {
-    id: number;
-    isActive: boolean;
-}
+import InfographicsSection from './components/InfographicsSection';
+import {TInfographicsSection} from './types/TInterfaceSection';
 
 interface IState {
-    infographicsSections: Section[];
-    numberOfAddedSections: number;
+    infographicsSections: TInfographicsSection[],
+    numberOfAddedSections: number
 }
 
 class App extends React.Component<{}, IState> {
@@ -22,7 +18,7 @@ class App extends React.Component<{}, IState> {
         numberOfAddedSections: 0
     };
 
-    createSection = (section: Section) => {
+    createSection = (section: TInfographicsSection) => {
 
         return <InfographicsSection id={section.id}
                                     key={section.id}
@@ -35,7 +31,7 @@ class App extends React.Component<{}, IState> {
 
         const {infographicsSections, numberOfAddedSections} = this.state;
 
-        let newSection: Section = {
+        let newSection: TInfographicsSection = {
             id: numberOfAddedSections,
             isActive: false
         };
