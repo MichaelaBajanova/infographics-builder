@@ -1,9 +1,5 @@
 import React from 'react';
-
-export const EIconPrefix = {
-    regular: 'far',
-    solid: 'fas'
-};
+import {EIconPrefix} from "../enums/EIconPrefix";
 
 interface IProps {
     name: string,
