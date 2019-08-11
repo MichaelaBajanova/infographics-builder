@@ -13,8 +13,8 @@ interface IState {
 
 class App extends React.Component<{}, IState> {
 
-    state: IState = {
-        infographicsSections: [],
+    state = {
+        infographicsSections: [] as TInfographicsSection[],
         numberOfAddedSections: 0
     };
 
