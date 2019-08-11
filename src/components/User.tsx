@@ -1,7 +1,7 @@
 import React from "react";
 import '../styles/User.scss';
 
-const User: React.FunctionComponent = () => {
+const User: React.FC = () => {
 
     return (
         <div className="user">

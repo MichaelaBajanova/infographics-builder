@@ -39,8 +39,9 @@ class Editor extends React.Component<IProps> {
              <div className="editor">
                  <button
                      className="button"
-                     onClick={() => addSection()}
-                 >Add
+                     onClick={addSection}
+                 >
+                     Add
                  </button>
                  <button
                      className="button"

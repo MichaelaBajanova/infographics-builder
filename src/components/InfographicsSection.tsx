@@ -10,7 +10,7 @@ interface IProps {
     selectSection: (id: number) => void
 }
 
-const InfographicsSection: React.FunctionComponent<IProps> = (props) => {
+const InfographicsSection: React.FC<IProps> = (props) => {
 
     const {isActive, id, selectSection} = props;
 

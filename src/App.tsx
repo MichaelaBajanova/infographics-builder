@@ -20,11 +20,14 @@ class App extends React.Component<{}, IState> {
 
     createSection = (section: TInfographicsSection) => {
 
-        return <InfographicsSection id={section.id}
-                                    key={section.id}
-                                    isActive={section.isActive}
-                                    selectSection={this.selectSection}
-        />;
+        return (
+            <InfographicsSection
+                id={section.id}
+                key={section.id}
+                isActive={section.isActive}
+                selectSection={this.selectSection}
+            />
+        );
     };
 
     addSection = () => {

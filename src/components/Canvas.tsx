@@ -7,7 +7,7 @@ interface IProps {
     createSection: (section: TInfographicsSection) => object
 }
 
-const Canvas: React.FunctionComponent<IProps> = (props) => {
+const Canvas: React.FC<IProps> = (props) => {
 
     const {infographicsSections, createSection} = props;
 
