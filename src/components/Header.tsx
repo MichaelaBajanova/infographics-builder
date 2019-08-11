@@ -16,11 +16,11 @@ class User extends React.Component {
 
     render = () => {
         return (
-            <div className="header__user">
-                <div className="header__user-photo-wrapper">
-                    <img className="header__user-photo" src={require('../images/puppy.jpg')} alt="User"/>
+            <div className="user">
+                <div className="user__photo-wrapper">
+                    <img className="user__photo" src={require('../images/puppy.jpg')} alt="User"/>
                 </div>
-                <div className="header__user-name">John Doe</div>
+                <div className="user__name">John Doe</div>
             </div>
         );
     }

@@ -3,16 +3,13 @@
 .header {
   display: flex;
   background-color: $primary-dark;
-  //box-shadow: 0 3px 1px 0 #00B4BD;
-  position: relative;
-  z-index: 2;
-  
-  &__user {
-    display: flex;
-    width: 20%;
-  }
+}
 
-  &__user-photo-wrapper {
+.user {
+  display: flex;
+  width: 20%;
+
+  &__photo-wrapper {
     display: inline-block;
     position: relative;
     width: 40px;
@@ -22,13 +19,13 @@
     margin: 7px;
   }
 
-  &__user-photo {
+  &__photo {
     width: auto;
     height: 100%;
     margin-left: -10px;
   }
 
-  &__user-name {
+  &__name {
     align-self: center;
     color: #fff;
   }
