@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/Header.scss';
+import User from "./User";
 
 class Header extends React.Component {
 
@@ -9,20 +10,6 @@ class Header extends React.Component {
                 <User/>
             </header>
         )
-    }
-}
-
-class User extends React.Component {
-
-    render = () => {
-        return (
-            <div className="user">
-                <div className="user__photo-wrapper">
-                    <img className="user__photo" src={require('../images/puppy.jpg')} alt="User"/>
-                </div>
-                <div className="user__name">John Doe</div>
-            </div>
-        );
     }
 }
 
