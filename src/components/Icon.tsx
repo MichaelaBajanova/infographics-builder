@@ -10,7 +10,7 @@ interface IProps {
     prefix: string
 }
 
-const Icon = (props: IProps) => {
+const Icon: React.FunctionComponent<IProps> = (props) => {
     const {name, prefix} = props;
 
     return (
