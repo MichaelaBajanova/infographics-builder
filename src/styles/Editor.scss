@@ -1,27 +1,33 @@
+@import "./colors/base-colors";
+@import "./colors/button-colors";
+
 .editor {
   height: 100vh;
   width: 20%;
   justify-content: center;
-
-  background-color: #B6DFE5;
-  z-index: 1;
+  color: #fff;
+  background-color: $primary-medium;
 }
 
 .button {
   width: 100%;
-  height: 30px;
-  margin-top: 10px;
+  height: 40px;
   border: none;
-  background-color: #B6DFE5;
+  background-color: $editor-button;
   outline: none;
+  font-size: 1em;
+}
+
+.button:enabled {
+  color: #fff;
 }
 
 .button:hover {
-  background-color: #9ad2db;
+  text-decoration: underline;
 }
 
 .button:active {
-  background-color: #8fcdd6;
+  background-color: $editor-button-active;
 }
 
 .fa-plus {

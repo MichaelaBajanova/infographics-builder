@@ -1,7 +1,9 @@
+@import "./colors/base-colors";
+
 .header {
   display: flex;
-  background-color: #00C6CF;
-  box-shadow: 0 3px 1px 0 #00B4BD;
+  background-color: $primary-dark;
+  //box-shadow: 0 3px 1px 0 #00B4BD;
   position: relative;
   z-index: 2;
   

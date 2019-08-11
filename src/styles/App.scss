@@ -1,7 +1,9 @@
+@import "./colors/base-colors";
+
 .app {
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
-  background-color: #f4f4f4;
+  background-color: $surface-light;
   font-family: Roboto, sans-serif;
   overflow: hidden;
 }
