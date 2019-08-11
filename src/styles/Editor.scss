@@ -16,18 +16,18 @@
   background-color: $editor-button;
   outline: none;
   font-size: 1em;
-}
 
-.button:enabled {
-  color: #fff;
-}
+  &:enabled {
+    color: #fff;
+  }
 
-.button:hover {
-  text-decoration: underline;
-}
+  &:hover {
+    text-decoration: underline;
+  }
 
-.button:active {
-  background-color: $editor-button-active;
+  &:active {
+    background-color: $editor-button-active;
+  }
 }
 
 .fa-plus {
