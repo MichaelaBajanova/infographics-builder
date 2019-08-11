@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/InfographicsSection.scss'
-import Icon, {EIconPrefix} from './Icon'
+import Icon from "./Icon";
 
 interface IProps {
     id: number,
@@ -20,7 +20,6 @@ const InfographicsSection: React.FunctionComponent<IProps> = (props) => {
             onClick={() => selectSection(id)}>
             Section #{id + 1}
             <Icon
-                prefix={EIconPrefix.regular}
                 name={'times-circle'}
             />
         </div>
