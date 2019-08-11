@@ -13,7 +13,7 @@ const Canvas: React.FunctionComponent<IProps> = (props) => {
 
     return (
         <div className="canvas">
-            <div className="infographics-wrapper">
+            <div className="infographics">
                 {infographicsSections.map(createSection)}
             </div>
         </div>

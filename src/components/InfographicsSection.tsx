@@ -16,7 +16,7 @@ const InfographicsSection: React.FunctionComponent<IProps> = (props) => {
     return (
         <div
             id={id.toString()}
-            className={`infographics-section ${isActive && 'infographics-section--active'}`}
+            className={`infographics__infographics-section ${isActive && 'infographics__infographics-section--active'}`}
             onClick={() => selectSection(id)}>
             Section #{id + 1}
             <Icon
