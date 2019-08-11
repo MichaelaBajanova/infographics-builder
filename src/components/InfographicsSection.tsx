@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/InfographicsSection.scss'
 import Icon from "./Icon";
+import {EIconName} from "../enums/EIconName";
 
 interface IProps {
     id: number,
@@ -17,10 +18,11 @@ const InfographicsSection: React.FunctionComponent<IProps> = (props) => {
         <div
             id={id.toString()}
             className={`infographics__infographics-section ${isActive && 'infographics__infographics-section--active'}`}
-            onClick={() => selectSection(id)}>
+            onClick={() => selectSection(id)}
+        >
             Section #{id + 1}
             <Icon
-                name={'times-circle'}
+                name={EIconName.deleteInfographicsSection}
             />
         </div>
     );
