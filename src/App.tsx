@@ -3,87 +3,69 @@ import Header from './components/Header';
 import Editor from './components/Editor';
 import Canvas from './components/Canvas';
 import './styles/App.scss';
-import InfographicsSection from './components/InfographicsSection';
 import {TInfographicsSection} from './types/TInterfaceSection';
 
 interface IState {
     infographicsSections: TInfographicsSection[],
-    numberOfAddedSections: number
+    numberOfAddedSections: number,
+    selectedSectionId: number
 }
 
 class App extends React.Component<{}, IState> {
 
     state = {
         infographicsSections: [] as TInfographicsSection[],
-        numberOfAddedSections: 0
+        numberOfAddedSections: 0,
+        selectedSectionId: -1
     };
 
-    createSection = (section: TInfographicsSection) => {
+    handleAddSection = () => {
 
-        return (
-            <InfographicsSection
-                id={section.id}
-                key={section.id}
-                isActive={section.isActive}
-                selectSection={this.selectSection}
-            />
-        );
-    };
+        const {infographicsSections, numberOfAddedSections, selectedSectionId} = this.state;
 
-    addSection = () => {
-
-        const {infographicsSections, numberOfAddedSections} = this.state;
-
-        let newSection: TInfographicsSection = {
+        const newSection: TInfographicsSection = {
             id: numberOfAddedSections,
             isActive: false
         };
 
         this.setState({
-            infographicsSections: infographicsSections.concat(newSection),
-            numberOfAddedSections: numberOfAddedSections + 1
+            infographicsSections: [...infographicsSections, newSection],
+            numberOfAddedSections: numberOfAddedSections + 1,
+            selectedSectionId: selectedSectionId
         });
     };
 
-    selectSection = (id: number) => {
+    handleSelectSection = (id: number) => {
 
         const {infographicsSections, numberOfAddedSections} = this.state;
 
-        for (let i: number = 0; i < infographicsSections.length; ++i) {
-            infographicsSections[i].isActive = infographicsSections[i].id === id;
-        }
-
         this.setState({
             infographicsSections: infographicsSections,
-            numberOfAddedSections: numberOfAddedSections
+            numberOfAddedSections: numberOfAddedSections,
+            selectedSectionId: id
         });
     };
 
-    deleteSection = (id: number) => {
+    handleDeleteSection = (id: number) => {
 
         const {infographicsSections, numberOfAddedSections} = this.state;
 
-        let sectionPosition: number = 0;
+        const sectionPosition: number = infographicsSections.findIndex(
+            (infographicsSection) => {return infographicsSection.id === id});
 
-        for (let i: number = 0; i < infographicsSections.length; ++i) {
-
-            if (infographicsSections[i].id === id) {
-                sectionPosition = i;
-                break;
-            }
-        }
-
-        infographicsSections.splice(sectionPosition, 1);
+        const infographicsSectionsCopy: TInfographicsSection[] = infographicsSections;
+        infographicsSectionsCopy.splice(sectionPosition, 1);
 
         this.setState({
-            infographicsSections: infographicsSections,
-            numberOfAddedSections: numberOfAddedSections
+            infographicsSections: infographicsSectionsCopy,
+            numberOfAddedSections: numberOfAddedSections,
+            selectedSectionId: -1
         });
     };
 
     render = () => {
 
-        const {infographicsSections} = this.state;
+        const {infographicsSections, selectedSectionId} = this.state;
 
         return (
             <div className="app">
@@ -91,13 +73,15 @@ class App extends React.Component<{}, IState> {
                 <div className="app-wrapper">
                     <Editor
                         infographicsSections={infographicsSections}
-                        addSection={this.addSection}
-                        deleteSection={this.deleteSection}
+                        selectedSectionId={selectedSectionId}
+                        addSection={this.handleAddSection}
+                        deleteSection={this.handleDeleteSection}
                     >
                     </Editor>
                     <Canvas
                         infographicsSections={infographicsSections}
-                        createSection={this.createSection}
+                        selectedSectionId={selectedSectionId}
+                        handleSelectSection={this.handleSelectSection}
                     />
                 </div>
             </div>

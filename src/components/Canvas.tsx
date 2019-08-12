@@ -1,20 +1,29 @@
 import React from 'react';
 import '../styles/Canvas.scss';
 import {TInfographicsSection} from '../types/TInterfaceSection';
+import InfographicsSection from "./InfographicsSection";
 
 interface IProps {
     infographicsSections: TInfographicsSection[],
-    createSection: (section: TInfographicsSection) => object
+    selectedSectionId: number,
+    handleSelectSection: (id: number) => void
 }
 
 const Canvas: React.FC<IProps> = (props) => {
 
-    const {infographicsSections, createSection} = props;
+    const {infographicsSections, selectedSectionId, handleSelectSection} = props;
 
     return (
         <div className="canvas">
             <div className="infographics">
-                {infographicsSections.map(createSection)}
+                {infographicsSections.map(
+                    (infographicsSection) => { return (
+                                                            <InfographicsSection
+                                                                id={infographicsSection.id}
+                                                                isActive={infographicsSection.id === selectedSectionId}
+                                                                handleSelectSection={handleSelectSection}
+                                                            />);
+                                                        })}
             </div>
         </div>
     );

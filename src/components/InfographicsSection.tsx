@@ -5,20 +5,19 @@ import {EIconName} from "../enums/EIconName";
 
 interface IProps {
     id: number,
-    key: number,
     isActive: boolean,
-    selectSection: (id: number) => void
+    handleSelectSection: (id: number) => void
 }
 
 const InfographicsSection: React.FC<IProps> = (props) => {
 
-    const {isActive, id, selectSection} = props;
+    const {id, isActive, handleSelectSection} = props;
 
     return (
         <div
-            id={id.toString()}
+            key={id}
             className={`infographics__infographics-section ${isActive && 'infographics__infographics-section--active'}`}
-            onClick={() => selectSection(id)}
+            onClick={() => handleSelectSection(id)}
         >
             Section #{id + 1}
             <Icon
