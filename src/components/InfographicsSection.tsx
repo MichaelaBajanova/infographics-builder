@@ -13,11 +13,14 @@ const InfographicsSection: React.FC<IProps> = (props) => {
 
     const {id, isActive, handleSelectSection} = props;
 
+    const onSelectSection = () => {
+        handleSelectSection(id);
+    };
+
     return (
         <div
-            key={id}
             className={`infographics__infographics-section ${isActive && 'infographics__infographics-section--active'}`}
-            onClick={() => handleSelectSection(id)}
+            onClick={onSelectSection}
         >
             Section #{id + 1}
             <Icon
@@ -27,4 +30,4 @@ const InfographicsSection: React.FC<IProps> = (props) => {
     );
 };
 
-export default InfographicsSection;
+export default React.memo(InfographicsSection);
