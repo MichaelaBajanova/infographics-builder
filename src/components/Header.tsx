@@ -2,15 +2,13 @@ import React from 'react';
 import '../styles/Header.scss';
 import User from "./User";
 
-class Header extends React.Component {
+const Header: React.FC = () => {
 
-    render = () => {
-        return (
-            <header className="header">
-                <User/>
-            </header>
-        )
-    }
-}
+    return (
+        <header className="header">
+            <User/>
+        </header>
+    );
+};
 
-export default Header;
+export default React.memo(Header);

@@ -13,4 +13,4 @@ const User: React.FC = () => {
     );
 };
 
-export default User;
+export default React.memo(User);
