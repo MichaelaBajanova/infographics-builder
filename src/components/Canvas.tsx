@@ -21,6 +21,7 @@ const Canvas: React.FC<IProps> = (props) => {
                         (infographicsSection) => { return (
                             <InfographicsSection
                                 id={infographicsSection.id}
+                                key={infographicsSection.id}
                                 isActive={infographicsSection.id === selectedSectionId}
                                 handleSelectSection={handleSelectSection}
                             />);
