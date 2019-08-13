@@ -19,51 +19,7 @@ class App extends React.Component<{}, IState> {
         selectedSectionId: -1
     };
 
-    handleAddSection = () => {
-
-        const {infographicsSections, numberOfAddedSections, selectedSectionId} = this.state;
-
-        const newSection: TInfographicsSection = {
-            id: numberOfAddedSections,
-            isActive: false
-        };
-
-        this.setState({
-            infographicsSections: [...infographicsSections, newSection],
-            numberOfAddedSections: numberOfAddedSections + 1,
-            selectedSectionId: selectedSectionId
-        });
-    };
-
-    handleSelectSection = (id: number) => {
-
-        const {infographicsSections, numberOfAddedSections} = this.state;
-
-        this.setState({
-            infographicsSections: infographicsSections,
-            numberOfAddedSections: numberOfAddedSections,
-            selectedSectionId: id
-        });
-    };
-
-    handleDeleteSection = (id: number) => {
-
-        const {infographicsSections, numberOfAddedSections} = this.state;
-
-        const sectionPosition: number = infographicsSections.findIndex(
-            (infographicsSection) => {return infographicsSection.id === id});
-
-        const infographicsSectionsCopy: TInfographicsSection[] = infographicsSections;
-        infographicsSectionsCopy.splice(sectionPosition, 1);
-
-        this.setState({
-            infographicsSections: infographicsSectionsCopy,
-            numberOfAddedSections: numberOfAddedSections,
-            selectedSectionId: -1
-        });
-    };
-
-    render = () => {
+    public render() {
 
         const {infographicsSections, selectedSectionId} = this.state;
 
@@ -87,6 +43,50 @@ class App extends React.Component<{}, IState> {
             </div>
         );
     }
+
+    private handleAddSection = () => {
+
+        const {infographicsSections, numberOfAddedSections, selectedSectionId} = this.state;
+
+        const newSection: TInfographicsSection = {
+            id: numberOfAddedSections,
+            isActive: false
+        };
+
+        this.setState({
+            infographicsSections: [...infographicsSections, newSection],
+            numberOfAddedSections: numberOfAddedSections + 1,
+            selectedSectionId: selectedSectionId
+        });
+    };
+
+    private handleSelectSection = (id: number) => {
+
+        const {infographicsSections, numberOfAddedSections} = this.state;
+
+        this.setState({
+            infographicsSections: infographicsSections,
+            numberOfAddedSections: numberOfAddedSections,
+            selectedSectionId: id
+        });
+    };
+
+    private handleDeleteSection = () => {
+
+        const {infographicsSections, selectedSectionId: id, numberOfAddedSections} = this.state;
+
+        const sectionPosition: number = infographicsSections.findIndex(
+            (infographicsSection) => {return infographicsSection.id === id});
+
+        const infographicsSectionsCopy: TInfographicsSection[] = infographicsSections;
+        infographicsSectionsCopy.splice(sectionPosition, 1);
+
+        this.setState({
+            infographicsSections: infographicsSectionsCopy,
+            numberOfAddedSections: numberOfAddedSections,
+            selectedSectionId: -1
+        });
+    };
 }
 
 export default App;

@@ -1,12 +1,13 @@
 import React from 'react';
 import '../styles/Editor.scss'
 import {TInfographicsSection} from '../types/TInterfaceSection';
+import Button from "./Button";
 
 interface IProps {
     infographicsSections: TInfographicsSection[],
     selectedSectionId: number,
     addSection: () => void,
-    deleteSection: (id: number) => void
+    deleteSection: () => void,
 }
 
 const Editor: React.FC<IProps> = (props) => {
@@ -15,19 +16,16 @@ const Editor: React.FC<IProps> = (props) => {
 
     return (
         <div className="editor">
-            <button
-                className="button"
-                onClick={addSection}
-            >
-                Add
-            </button>
-            <button
-                className="button"
-                onClick={() => deleteSection(selectedSectionId)}
+            <Button
+                action={addSection}
+                text={"Add new section"}
+                disabled={false}
+            />
+            <Button
+                action={deleteSection}
+                text={"Delete section"}
                 disabled={selectedSectionId < 0}
-            >
-                Delete this section
-            </button>
+            />
         </div>
     );
 };
