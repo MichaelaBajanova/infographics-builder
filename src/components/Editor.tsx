@@ -5,7 +5,7 @@ import Button from "./Button";
 
 interface IProps {
     infographicsSections: TInfographicsSection[],
-    selectedSectionId: number,
+    selectedSectionId: number | null,
     addSection: () => void,
     deleteSection: () => void,
 }
@@ -24,7 +24,7 @@ const Editor: React.FC<IProps> = (props) => {
             <Button
                 action={deleteSection}
                 text={"Delete section"}
-                disabled={selectedSectionId < 0}
+                disabled={selectedSectionId === null}
             />
         </div>
     );

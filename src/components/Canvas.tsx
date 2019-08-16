@@ -5,7 +5,7 @@ import InfographicsSection from "./InfographicsSection";
 
 interface IProps {
     infographicsSections: TInfographicsSection[],
-    selectedSectionId: number,
+    selectedSectionId: number | null,
     handleSelectSection: (id: number) => void
 }
 

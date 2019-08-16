@@ -8,7 +8,7 @@ import {TInfographicsSection} from './types/TInterfaceSection';
 interface IState {
     infographicsSections: TInfographicsSection[],
     numberOfAddedSections: number,
-    selectedSectionId: number
+    selectedSectionId: number | null
 }
 
 class App extends React.Component<{}, IState> {
@@ -16,7 +16,7 @@ class App extends React.Component<{}, IState> {
     state = {
         infographicsSections: [] as TInfographicsSection[],
         numberOfAddedSections: 0,
-        selectedSectionId: -1
+        selectedSectionId: null
     };
 
     public render() {
@@ -84,7 +84,7 @@ class App extends React.Component<{}, IState> {
         this.setState({
             infographicsSections: infographicsSectionsCopy,
             numberOfAddedSections: numberOfAddedSections,
-            selectedSectionId: -1
+            selectedSectionId: null
         });
     };
 }
