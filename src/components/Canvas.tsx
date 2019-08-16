@@ -18,14 +18,14 @@ const Canvas: React.FC<IProps> = (props) => {
             <div className="canvas">
                 <div className="infographics">
                     {infographicsSections.map(
-                        (infographicsSection) => { return (
+                        (infographicsSection) => (
                             <InfographicsSection
                                 id={infographicsSection.id}
                                 key={infographicsSection.id}
                                 isActive={infographicsSection.id === selectedSectionId}
                                 handleSelectSection={handleSelectSection}
-                            />);
-                        })}
+                            />)
+                    )}
                 </div>
             </div>
         </div>

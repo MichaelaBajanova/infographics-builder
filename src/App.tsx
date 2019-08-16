@@ -32,8 +32,7 @@ class App extends React.Component<{}, IState> {
                         selectedSectionId={selectedSectionId}
                         addSection={this.handleAddSection}
                         deleteSection={this.handleDeleteSection}
-                    >
-                    </Editor>
+                    />
                     <Canvas
                         infographicsSections={infographicsSections}
                         selectedSectionId={selectedSectionId}
@@ -56,18 +55,14 @@ class App extends React.Component<{}, IState> {
         this.setState({
             infographicsSections: [...infographicsSections, newSection],
             numberOfAddedSections: numberOfAddedSections + 1,
-            selectedSectionId: selectedSectionId
+            selectedSectionId
         });
     };
 
-    private handleSelectSection = (id: number) => {
-
-        const {infographicsSections, numberOfAddedSections} = this.state;
+    private handleSelectSection = (selectedSectionId: number) => {
 
         this.setState({
-            infographicsSections: infographicsSections,
-            numberOfAddedSections: numberOfAddedSections,
-            selectedSectionId: id
+            selectedSectionId
         });
     };
 
