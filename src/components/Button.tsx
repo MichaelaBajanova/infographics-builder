@@ -1,14 +1,14 @@
-import React from 'react';
+import React, {ReactNode} from 'react';
 
 interface IProps {
+    children: ReactNode,
     action: () => void,
-    text: string,
     disabled: boolean
 }
 
 const Button: React.FC<IProps> = (props) => {
 
-    const {action, text, disabled} = props;
+    const {action, disabled} = props;
 
     return (
         <button
@@ -16,7 +16,7 @@ const Button: React.FC<IProps> = (props) => {
             onClick={action}
             disabled={disabled}
         >
-            {text}
+            {props.children}
         </button>
     );
 };

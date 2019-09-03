@@ -18,14 +18,16 @@ const Editor: React.FC<IProps> = (props) => {
         <div className="editor">
             <Button
                 action={addSection}
-                text={"Add new section"}
                 disabled={false}
-            />
+            >
+                Add new section
+            </Button>
             <Button
                 action={deleteSection}
-                text={"Delete section"}
                 disabled={selectedSectionId === null}
-            />
+            >
+                Delete this section
+            </Button>
         </div>
     );
 };
