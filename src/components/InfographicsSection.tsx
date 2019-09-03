@@ -18,14 +18,16 @@ const InfographicsSection: React.FC<IProps> = (props) => {
     };
 
     return (
-        <div
-            className={`infographics__infographics-section ${isActive && 'infographics__infographics-section--active'}`}
-            onClick={onSelectSection}
-        >
-            Section #{id + 1}
-            <Icon
-                name={EIconName.deleteInfographicsSection}
-            />
+        <div className="scope__InfographicsSection">
+            <div
+                className={`infographics__infographics-section ${isActive && 'infographics__infographics-section--active'}`}
+                onClick={onSelectSection}
+            >
+                Section #{id + 1}
+                <Icon
+                    name={EIconName.deleteInfographicsSection}
+                />
+            </div>
         </div>
     );
 };

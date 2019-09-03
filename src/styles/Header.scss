@@ -1,6 +1,8 @@
 @import "./colors/base-colors";
 
-.header {
-  display: flex;
-  background-color: $primary-dark;
+.scope__Header {
+  .header {
+    display: flex;
+    background-color: $primary-dark;
+  }
 }

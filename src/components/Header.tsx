@@ -5,9 +5,11 @@ import User from "./User";
 const Header: React.FC = () => {
 
     return (
-        <header className="header">
-            <User/>
-        </header>
+        <div className="scope__Header">
+            <header className="header">
+                <User/>
+            </header>
+        </div>
     );
 };
 

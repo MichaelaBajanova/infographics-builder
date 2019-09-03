@@ -1,31 +1,34 @@
 @import "./colors/base-colors";
 @import "./colors/button-colors";
 
-.editor {
-  height: 100vh;
+.scope__Editor {
   width: 20%;
-  justify-content: center;
-  color: #fff;
-  background-color: $primary-medium;
-}
 
-.button {
-  width: 100%;
-  height: 40px;
-  border: none;
-  background-color: $editor-button;
-  outline: none;
-  font-size: 1em;
-
-  &:enabled {
+  .editor {
+    height: 100vh;
+    justify-content: center;
     color: #fff;
+    background-color: $primary-medium;
   }
 
-  &:hover {
-    text-decoration: underline;
-  }
+  .button {
+    width: 100%;
+    height: 40px;
+    border: none;
+    background-color: $editor-button;
+    outline: none;
+    font-size: 1em;
 
-  &:active {
-    background-color: $editor-button-active;
+    &:enabled {
+      color: #fff;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:active {
+      background-color: $editor-button-active;
+    }
   }
 }
