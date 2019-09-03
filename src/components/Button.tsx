@@ -3,7 +3,7 @@ import React, {ReactNode} from 'react';
 interface IProps {
     children: ReactNode,
     action: () => void,
-    disabled: boolean
+    disabled?: boolean
 }
 
 const Button: React.FC<IProps> = (props) => {

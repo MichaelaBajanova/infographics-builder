@@ -19,7 +19,6 @@ const Editor: React.FC<IProps> = (props) => {
             <div className="editor">
                 <Button
                     action={addSection}
-                    disabled={false}
                 >
                     Add new section
                 </Button>
