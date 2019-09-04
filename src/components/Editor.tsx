@@ -26,7 +26,7 @@ const Editor: React.FC<IProps> = (props) => {
                     action={deleteSection}
                     disabled={selectedSectionId === null}
                 >
-                    Delete this section
+                    Delete selected section
                 </Button>
             </div>
         </div>

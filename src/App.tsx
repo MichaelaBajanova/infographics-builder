@@ -7,7 +7,7 @@ import {IInfographicsSection} from './types/TInterfaceSection';
 
 interface IState {
     infographicsSections: IInfographicsSection[],
-    numberOfAddedSections: number,
+    lastUsedId: number,
     selectedSectionId: number | null
 }
 
@@ -15,7 +15,7 @@ class App extends React.Component<{}, IState> {
 
     state = {
         infographicsSections: [] as IInfographicsSection[],
-        numberOfAddedSections: 0,
+        lastUsedId: 0,
         selectedSectionId: null
     };
 
@@ -45,16 +45,16 @@ class App extends React.Component<{}, IState> {
 
     private handleAddSection = () => {
 
-        const {infographicsSections, numberOfAddedSections, selectedSectionId} = this.state;
+        const {infographicsSections, lastUsedId, selectedSectionId} = this.state;
 
         const newSection: IInfographicsSection = {
-            id: numberOfAddedSections,
+            id: lastUsedId,
             isActive: false
         };
 
         this.setState({
             infographicsSections: [...infographicsSections, newSection],
-            numberOfAddedSections: numberOfAddedSections + 1,
+            lastUsedId: lastUsedId + 1,
             selectedSectionId
         });
     };
@@ -68,7 +68,7 @@ class App extends React.Component<{}, IState> {
 
     private handleDeleteSection = () => {
 
-        const {infographicsSections, selectedSectionId: id, numberOfAddedSections} = this.state;
+        const {infographicsSections, selectedSectionId: id} = this.state;
 
         const sectionPosition: number = infographicsSections.findIndex(
             (infographicsSection) => {return infographicsSection.id === id});
@@ -78,7 +78,6 @@ class App extends React.Component<{}, IState> {
 
         this.setState({
             infographicsSections: infographicsSectionsCopy,
-            numberOfAddedSections: numberOfAddedSections,
             selectedSectionId: null
         });
     };
