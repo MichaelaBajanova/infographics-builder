@@ -20,7 +20,7 @@ const InfographicsSection: React.FC<IProps> = (props) => {
     return (
         <div className="scope__InfographicsSection">
             <div
-                className={`infographics__infographics-section ${isActive && 'infographics__infographics-section--active'}`}
+                className={`infographics__infographics-section ${isActive ? 'infographics__infographics-section--active' : ''}`}
                 onClick={onSelectSection}
             >
                 Section #{id + 1}
