@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/Header.scss';
-import User from "./User";
+import User from './User';
 
 const Header: React.FC = () => {
 

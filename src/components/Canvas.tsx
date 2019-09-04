@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/Canvas.scss';
 import {IInfographicsSection} from '../types/TInterfaceSection';
-import InfographicsSection from "./InfographicsSection";
+import InfographicsSection from './InfographicsSection';
 
 interface IProps {
     infographicsSections: IInfographicsSection[],

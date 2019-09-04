@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import '../styles/User.scss';
 
 const User: React.FC = () => {

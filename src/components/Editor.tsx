@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/Editor.scss'
 import {IInfographicsSection} from '../types/TInterfaceSection';
-import Button from "./Button";
+import Button from './Button';
 
 interface IProps {
     infographicsSections: IInfographicsSection[],

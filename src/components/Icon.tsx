@@ -1,5 +1,5 @@
 import React from 'react';
-import {EIconPrefix} from "../enums/EIconPrefix";
+import {EIconPrefix} from '../enums/EIconPrefix';
 
 interface IProps {
     name: string,

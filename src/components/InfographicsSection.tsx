@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/InfographicsSection.scss'
-import Icon from "./Icon";
-import {EIconName} from "../enums/EIconName";
+import Icon from './Icon';
+import {EIconName} from '../enums/EIconName';
 
 interface IProps {
     id: number,
