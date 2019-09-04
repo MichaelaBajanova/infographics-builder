@@ -1,0 +1,17 @@
+.scope__InfographicsSection {
+  .infographics__infographics-section {
+    height: 150px;
+    width: 300px;
+    border: 1px solid #000000;
+
+    &--active {
+      border: 1px dashed #000000;
+    }
+
+    & .fa-times-circle {
+      float: right;
+      margin: 2px;
+      color: rgba(216, 0, 50, 0.5);
+    }
+  }
+}

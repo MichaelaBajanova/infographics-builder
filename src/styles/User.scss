@@ -1,0 +1,25 @@
+.user {
+  display: flex;
+  width: 20%;
+
+  &__photo-wrapper {
+    display: inline-block;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 7px;
+  }
+
+  &__photo {
+    width: auto;
+    height: 100%;
+    margin-left: -10px;
+  }
+
+  &__name {
+    align-self: center;
+    color: #fff;
+  }
+}
