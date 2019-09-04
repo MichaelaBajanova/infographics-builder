@@ -1,10 +1,10 @@
 import React from 'react';
 import '../styles/Editor.scss'
-import {TInfographicsSection} from '../types/TInterfaceSection';
+import {IInfographicsSection} from '../types/TInterfaceSection';
 import Button from "./Button";
 
 interface IProps {
-    infographicsSections: TInfographicsSection[],
+    infographicsSections: IInfographicsSection[],
     selectedSectionId: number | null,
     addSection: () => void,
     deleteSection: () => void,

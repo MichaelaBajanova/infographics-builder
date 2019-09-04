@@ -3,10 +3,10 @@ import Header from './components/Header';
 import Editor from './components/Editor';
 import Canvas from './components/Canvas';
 import './styles/App.scss';
-import {TInfographicsSection} from './types/TInterfaceSection';
+import {IInfographicsSection} from './types/TInterfaceSection';
 
 interface IState {
-    infographicsSections: TInfographicsSection[],
+    infographicsSections: IInfographicsSection[],
     numberOfAddedSections: number,
     selectedSectionId: number | null
 }
@@ -14,7 +14,7 @@ interface IState {
 class App extends React.Component<{}, IState> {
 
     state = {
-        infographicsSections: [] as TInfographicsSection[],
+        infographicsSections: [] as IInfographicsSection[],
         numberOfAddedSections: 0,
         selectedSectionId: null
     };
@@ -47,7 +47,7 @@ class App extends React.Component<{}, IState> {
 
         const {infographicsSections, numberOfAddedSections, selectedSectionId} = this.state;
 
-        const newSection: TInfographicsSection = {
+        const newSection: IInfographicsSection = {
             id: numberOfAddedSections,
             isActive: false
         };
@@ -73,7 +73,7 @@ class App extends React.Component<{}, IState> {
         const sectionPosition: number = infographicsSections.findIndex(
             (infographicsSection) => {return infographicsSection.id === id});
 
-        const infographicsSectionsCopy: TInfographicsSection[] = infographicsSections;
+        const infographicsSectionsCopy: IInfographicsSection[] = infographicsSections;
         infographicsSectionsCopy.splice(sectionPosition, 1);
 
         this.setState({

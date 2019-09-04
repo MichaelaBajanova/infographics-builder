@@ -1,10 +1,10 @@
 import React from 'react';
 import '../styles/Canvas.scss';
-import {TInfographicsSection} from '../types/TInterfaceSection';
+import {IInfographicsSection} from '../types/TInterfaceSection';
 import InfographicsSection from "./InfographicsSection";
 
 interface IProps {
-    infographicsSections: TInfographicsSection[],
+    infographicsSections: IInfographicsSection[],
     selectedSectionId: number | null,
     handleSelectSection: (id: number) => void
 }
