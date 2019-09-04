@@ -73,7 +73,7 @@ class App extends React.Component<{}, IState> {
         const sectionPosition: number = infographicsSections.findIndex(
             (infographicsSection) => {return infographicsSection.id === id});
 
-        const infographicsSectionsCopy: IInfographicsSection[] = infographicsSections;
+        const infographicsSectionsCopy: IInfographicsSection[] = [...infographicsSections];
         infographicsSectionsCopy.splice(sectionPosition, 1);
 
         this.setState({
