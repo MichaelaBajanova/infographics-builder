@@ -16,7 +16,7 @@ const Icon: React.FC<IProps> = (props) => {
 };
 
 Icon.defaultProps = {
-    prefix: EIconPrefix.regular
+    prefix: EIconPrefix.solid
 };
 
 export default React.memo(Icon);
