@@ -1,22 +1,16 @@
 import React from 'react';
-import {EIconPrefix} from '../enums/EIconPrefix';
 
 interface IProps {
     name: string,
-    prefix?: string
 }
 
 const Icon: React.FC<IProps> = (props) => {
 
-    const {name, prefix} = props;
+    const {name} = props;
 
     return (
-        <i className={`${prefix} fa-${name}`} />
+        <i className="material-icons">{name}</i>
     );
-};
-
-Icon.defaultProps = {
-    prefix: EIconPrefix.solid
 };
 
 export default React.memo(Icon);

@@ -24,10 +24,8 @@ const InfographicsSection: React.FC<IProps> = (props) => {
                 onClick={onSelectSection}
             >
                 Section #{id + 1}
-                <span className="">
-                    <Icon
-                        name={EIconName.deleteInfographicsSection}
-                    />
+                <span className="infographics__delete-infographics">
+                    <Icon name={EIconName.CLEAR}/>
                 </span>
             </div>
         </div>
