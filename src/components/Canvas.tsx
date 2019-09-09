@@ -6,12 +6,12 @@ import InfographicsSection from './InfographicsSection';
 interface IProps {
     infographicsSections: IInfographicsSection[],
     selectedSectionId: number | null,
-    handleSelectSection: (id: number) => void
+    handleDeleteSection: (id: number) => void,
 }
 
 const Canvas: React.FC<IProps> = (props) => {
 
-    const {infographicsSections, selectedSectionId, handleSelectSection} = props;
+    const {infographicsSections, selectedSectionId, handleDeleteSection} = props;
 
     return (
         <div className="scope__Canvas">
@@ -23,7 +23,7 @@ const Canvas: React.FC<IProps> = (props) => {
                                 id={infographicsSection.id}
                                 key={infographicsSection.id}
                                 isActive={infographicsSection.id === selectedSectionId}
-                                handleSelectSection={handleSelectSection}
+                                handleDeleteSection={handleDeleteSection}
                             />)
                     )}
                 </div>

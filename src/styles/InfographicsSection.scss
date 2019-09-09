@@ -7,11 +7,21 @@
     &--active {
       border: 1px dashed #000000;
     }
+  }
 
-    & .fa-times-circle {
-      float: right;
-      margin: 2px;
-      color: rgba(216, 0, 50, 0.5);
-    }
+  .infographics__delete-infographics {
+    float: right;
+    margin: 5px;
+    cursor: default;
+    color: rgba(0, 0, 0, 0.5);
+
+      &:hover {
+        color: #000;
+      }
+
+      &:active {
+        color: #000;
+        margin-top: 4px;
+      }
   }
 }

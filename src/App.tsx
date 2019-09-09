@@ -8,7 +8,6 @@ import {IInfographicsSection} from './types/TInterfaceSection';
 interface IState {
     infographicsSections: IInfographicsSection[],
     lastUsedId: number,
-    selectedSectionId: number | null
 }
 
 class App extends React.Component<{}, IState> {
@@ -29,14 +28,12 @@ class App extends React.Component<{}, IState> {
                 <div className="app-wrapper">
                     <Editor
                         infographicsSections={infographicsSections}
-                        selectedSectionId={selectedSectionId}
                         addSection={this.handleAddSection}
-                        deleteSection={this.handleDeleteSection}
                     />
                     <Canvas
                         infographicsSections={infographicsSections}
                         selectedSectionId={selectedSectionId}
-                        handleSelectSection={this.handleSelectSection}
+                        handleDeleteSection={this.handleDeleteSection}
                     />
                 </div>
             </div>
@@ -45,7 +42,7 @@ class App extends React.Component<{}, IState> {
 
     private handleAddSection = () => {
 
-        const {infographicsSections, lastUsedId, selectedSectionId} = this.state;
+        const {infographicsSections, lastUsedId} = this.state;
 
         const newSection: IInfographicsSection = {
             id: lastUsedId,
@@ -55,20 +52,12 @@ class App extends React.Component<{}, IState> {
         this.setState({
             infographicsSections: [...infographicsSections, newSection],
             lastUsedId: lastUsedId + 1,
-            selectedSectionId
         });
     };
 
-    private handleSelectSection = (selectedSectionId: number) => {
+    private handleDeleteSection = (id: number) => {
 
-        this.setState({
-            selectedSectionId
-        });
-    };
-
-    private handleDeleteSection = () => {
-
-        const {infographicsSections, selectedSectionId: id} = this.state;
+        const {infographicsSections} = this.state;
 
         const sectionPosition: number = infographicsSections.findIndex(
             (infographicsSection) => {return infographicsSection.id === id});
@@ -78,7 +67,6 @@ class App extends React.Component<{}, IState> {
 
         this.setState({
             infographicsSections: infographicsSectionsCopy,
-            selectedSectionId: null
         });
     };
 }

@@ -6,27 +6,26 @@ import {EIconName} from '../enums/EIconName';
 interface IProps {
     id: number,
     isActive: boolean,
-    handleSelectSection: (id: number) => void
+    handleDeleteSection: (id: number) => void,
 }
 
 const InfographicsSection: React.FC<IProps> = (props) => {
 
-    const {id, isActive, handleSelectSection} = props;
+    const {id, isActive, handleDeleteSection} = props;
 
-    const onSelectSection = () => {
-        handleSelectSection(id);
+    const onDeleteSection = () => {
+        handleDeleteSection(id);
     };
 
     return (
         <div className="scope__InfographicsSection">
             <div
                 className={`infographics__infographics-section ${isActive ? 'infographics__infographics-section--active' : ''}`}
-                onClick={onSelectSection}
             >
                 Section #{id + 1}
-                <Icon
-                    name={EIconName.deleteInfographicsSection}
-                />
+                <span className="infographics__delete-infographics" onClick={onDeleteSection}>
+                    <Icon name={EIconName.CLEAR}/>
+                </span>
             </div>
         </div>
     );

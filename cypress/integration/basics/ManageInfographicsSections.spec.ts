@@ -8,16 +8,13 @@ describe('Manage Infographics Sections Test', () => {
             .get('.infographics__infographics-section').should('be.visible')
     });
 
-    it('Delete selected section', () => {
+    it('Delete section', () => {
         cy
             .visit('')
             .get('.button').contains('Add new section')
             .click()
-            .get('.infographics__infographics-section')
+            .get('.infographics__delete-infographics .material-icons').contains('clear')
             .click()
-            .get('.button').contains('Delete selected section')
-            .click()
-            .should('be.disabled')
             .get('.infographics').should('not.have.descendants')
     })
 });
