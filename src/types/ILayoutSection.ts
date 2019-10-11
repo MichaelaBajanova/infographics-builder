@@ -6,4 +6,7 @@ export interface ILayoutSection {
     y: number,
     start: number,
     end: number,
+    spanColumns: number,
+    columnStart: number,
+    columnEnd: number,
 }
