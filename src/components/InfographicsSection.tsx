@@ -6,7 +6,7 @@ import {IInfographicsSection} from '../types/IInfographicsSection'
 
 interface IProps {
     section: IInfographicsSection,
-    handleToggleSelectSection: (section: IInfographicsSection) => void,
+    handleToggleSelectSection: (id: number) => void,
     handleDeleteSection: (section: IInfographicsSection) => void,
 }
 
