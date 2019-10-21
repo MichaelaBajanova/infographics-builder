@@ -1,7 +1,6 @@
 @import './colors/base-colors';
 
 $infographics-width-fixed: 500px;
-$infographics-height-fixed: 250px;
 
 .scope__Canvas {
   width: 100%;
@@ -11,6 +10,10 @@ $infographics-height-fixed: 250px;
     background-color: #fff;
     box-shadow: 0 0 15px 0 $surface-dark;
     border: 1px solid #d1d1d1;
+
+    &--empty {
+      border: none;
+    }
   }
 
   .canvas {
