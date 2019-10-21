@@ -1,9 +1,6 @@
-import {IInfographicsSection} from './IInfographicsSection'
-import {ILayoutSection} from './ILayoutSection'
+import {TInfographics} from './IInfographicsSection'
 
 export interface IInfographicsDetails {
-    width: string, // should contain "{width}"px
-    sections: IInfographicsSection[],
-    sectionLayout: ILayoutSection[][],
-    columns: number,
+    widthPx: number,
+    infographics: TInfographics,
 }

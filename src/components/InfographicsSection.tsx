@@ -2,35 +2,31 @@ import React from 'react'
 import '../styles/InfographicsSection.scss'
 import Icon from './Icon'
 import {EIconName} from '../enums/EIconName'
-import {ILayoutSection} from '../types/ILayoutSection'
+import {IInfographicsSection} from '../types/IInfographicsSection'
 
 interface IProps {
-    id: number,
-    isActive: boolean,
-    layoutSection: ILayoutSection | null,
-    handleToggleSelectSection: (id: number) => void,
-    handleDeleteSection: (id: number) => void,
+    section: IInfographicsSection,
+    handleToggleSelectSection: (section: IInfographicsSection) => void,
+    handleDeleteSection: (section: IInfographicsSection) => void,
 }
 
 const InfographicsSection: React.FC<IProps> = (props) => {
 
-    const {id, isActive, layoutSection, handleToggleSelectSection, handleDeleteSection} = props;
+    const {section, handleToggleSelectSection, handleDeleteSection} = props;
+    const {column, isActive} = section
 
     let infographicsSectionStyle
-    if (layoutSection !== null) {
-        infographicsSectionStyle = {
-            //gridColumn: `${layoutSection.x + 1} / ${layoutSection.x + 1 + layoutSection.spanColumns }`,
-            gridColumn: `${layoutSection.columnStart} / ${layoutSection.columnEnd}`,
-            gridRow: `${layoutSection.y + 1} / ${layoutSection.y + 2}`,
-        }
+    infographicsSectionStyle = {
+        gridColumn: `${column.start} / ${column.end}`,
     }
 
     const onInfographicsSectionClick = () => {
-        handleToggleSelectSection(id);
+        console.log("clicking on", section)
+        handleToggleSelectSection(section);
     };
 
     const onDeleteIconClick = () => {
-        handleDeleteSection(id);
+        handleDeleteSection(section);
     };
 
     return (

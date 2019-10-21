@@ -1,16 +1,15 @@
-import React from 'react';
+import React from 'react'
 import '../styles/Editor.scss'
-import {IInfographicsSection} from '../types/IInfographicsSection';
-import Button from './Button';
+import Button from './Button'
 import {IInfographicsDetails} from '../types/IInfographicsDetails'
+import {IInfographicsSection} from '../types/IInfographicsSection'
 
 interface IProps {
     infographicsDetails: IInfographicsDetails,
-    infographicsSections: IInfographicsSection[],
-    selectedSectionId: number | null,
+    selectedSection: IInfographicsSection | null,
     addSection: () => void,
-    divideSection: (id: number) => void,
-    setSize: (width: string) => void,
+    divideSection: (section: IInfographicsSection) => void,
+    setSize: (widthPx: number) => void,
 }
 
 interface IState {
@@ -24,7 +23,7 @@ class Editor extends React.Component<IProps, IState> {
     }
 
     render() {
-        const {selectedSectionId, addSection} = this.props;
+        const {selectedSection, addSection} = this.props;
 
         return (
             <div className="scope__Editor">
@@ -36,7 +35,7 @@ class Editor extends React.Component<IProps, IState> {
                     </Button>
                     <Button
                         action={this.handleDivideColumn}
-                        disabled={selectedSectionId === null}
+                        disabled={selectedSection === null}
                     >
                         Divide
                     </Button>
@@ -50,18 +49,19 @@ class Editor extends React.Component<IProps, IState> {
     }
 
     private handleDivideColumn = () => {
-        const {selectedSectionId, divideSection} = this.props
+        const {selectedSection, divideSection} = this.props
 
-        if (selectedSectionId !== null) {
-            divideSection(selectedSectionId)
+        if (selectedSection !== null) {
+            divideSection(selectedSection)
         }
     }
 
     private onFormSubmit = (event: any) => {
+        const {widthInputValue} = this.state
         const {setSize} = this.props
 
         event.preventDefault()
-        setSize(this.state.widthInputValue)
+        setSize(Number(widthInputValue))
     }
 
     private onInputChange = (event: any) => {
@@ -69,6 +69,6 @@ class Editor extends React.Component<IProps, IState> {
             widthInputValue: event.target.value,
         })
     }
-};
+}
 
 export default Editor;
