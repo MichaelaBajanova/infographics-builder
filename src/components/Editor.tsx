@@ -9,17 +9,20 @@ interface IProps {
     selectedSection: IInfographicsSection | null,
     addSection: () => void,
     divideSection: (section: IInfographicsSection) => void,
-    setSize: (widthPx: number) => void,
+    setWidth: (widthPx: number) => void,
+    setHeight: (section: IInfographicsSection, heightPx: number) => void,
 }
 
 interface IState {
     widthInputValue: string,
+    heightInputValue: string,
 }
 
 class Editor extends React.Component<IProps, IState> {
 
-    state = {
+    state: IState = {
         widthInputValue: '',
+        heightInputValue: '',
     }
 
     render() {
@@ -39,9 +42,19 @@ class Editor extends React.Component<IProps, IState> {
                     >
                         Divide
                     </Button>
-                    <form onSubmit={this.onFormSubmit}>
+                    <form onSubmit={this.onWidthFormSubmit}>
                         <label>Width:</label>
-                        <input name="width" value={this.state.widthInputValue} onChange={this.onInputChange} type="text"/>
+                        <input name="width" value={this.state.widthInputValue} onChange={this.onWidthInputChange} type="text"/>
+                    </form>
+                    <form onSubmit={this.onHeightFormSubmit}>
+                        <label>Height:</label>
+                        <input
+                            name="height"
+                            value={this.state.heightInputValue}
+                            onChange={this.onHeightInputChange}
+                            type="text"
+                            disabled={!selectedSection}
+                        />
                     </form>
                 </div>
             </div>
@@ -56,17 +69,31 @@ class Editor extends React.Component<IProps, IState> {
         }
     }
 
-    private onFormSubmit = (event: any) => {
+    private onWidthFormSubmit = (event: any) => {
         const {widthInputValue} = this.state
-        const {setSize} = this.props
+        const {setWidth} = this.props
 
         event.preventDefault()
-        setSize(Number(widthInputValue))
+        setWidth(Number(widthInputValue))
     }
 
-    private onInputChange = (event: any) => {
+    private onHeightFormSubmit = (event: any) => {
+        const {heightInputValue} = this.state
+        const {setHeight, selectedSection} = this.props
+
+        event.preventDefault()
+        setHeight(selectedSection!, Number(heightInputValue))
+    }
+
+    private onWidthInputChange = (event: any) => {
         this.setState({
             widthInputValue: event.target.value,
+        })
+    }
+
+    private onHeightInputChange = (event: any) => {
+        this.setState({
+           heightInputValue: event.target.value,
         })
     }
 }

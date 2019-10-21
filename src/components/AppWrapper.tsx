@@ -34,7 +34,8 @@ class AppWrapper extends React.Component<{}, IState> {
                     selectedSection={selectedSection}
                     addSection={this.handleAddRow}
                     divideSection={this.handleDivideSection}
-                    setSize={this.handleSetSize}
+                    setWidth={this.handleSetWidth}
+                    setHeight={this.handleSetHeight}
                 />
                 <Canvas
                     infographicsDetails={infographicsDetails}
@@ -183,7 +184,7 @@ class AppWrapper extends React.Component<{}, IState> {
         }))
     }
 
-    private handleSetSize = (widthPx: number) => {
+    private handleSetWidth = (widthPx: number) => {
         const {infographicsDetails} = this.state
         const {infographics} = infographicsDetails
 
@@ -191,6 +192,23 @@ class AppWrapper extends React.Component<{}, IState> {
             draftState.infographicsDetails = {
                 widthPx,
                 infographics,
+            }
+        }))
+    }
+
+    private handleSetHeight = (section: IInfographicsSection, heightPx: number) => {
+        const {infographicsDetails} = this.state
+        const {infographics, widthPx} = infographicsDetails
+        const {y: row} = section.position
+
+        const infographicsCopy = produce(infographics, draft => {
+            draft[row].heightPx = heightPx
+        })
+
+        this.setState(produce(this.state, draftState => {
+            draftState.infographicsDetails = {
+                widthPx,
+                infographics: infographicsCopy,
             }
         }))
     }
