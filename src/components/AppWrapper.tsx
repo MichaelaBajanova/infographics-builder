@@ -83,8 +83,9 @@ class AppWrapper extends React.Component<{}, IState> {
 
     private handleToggleSelectSection = (section: IInfographicsSection) => {
         const {selectedSection} = this.state
+
         // if already selected section is clicked again, unselect it
-        if (section === selectedSection) {
+        if (selectedSection && section.id === selectedSection.id) {
             this.setState({
                 selectedSection: null,
             })

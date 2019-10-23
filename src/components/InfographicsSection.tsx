@@ -20,8 +20,8 @@ const InfographicsSection: React.FC<IProps> = (props) => {
         gridColumn: `${column.start} / ${column.end}`,
     }
 
-    const onInfographicsSectionClick = () => {
-        console.log("clicking on", section)
+    const onInfographicsSectionClick = (event: React.MouseEvent) => {
+        event.stopPropagation()
         handleToggleSelectSection(section);
     };
 
