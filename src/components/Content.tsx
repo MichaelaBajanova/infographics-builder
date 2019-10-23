@@ -54,14 +54,8 @@ class Content extends React.Component<{}, IState> {
             sections: [
                 {
                     id,
-                    position: {
-                        x: 0,
-                        y: infographics.length,
-                    },
-                    column: {
-                        start: 1,
-                        end: 2,
-                    },
+                    position: {x: 0, y: infographics.length},
+                    column: {start: 1, end: 2},
                     widthPercent: 100,
                     isActive: false,
                 }
@@ -91,11 +85,15 @@ class Content extends React.Component<{}, IState> {
                 selectedSection: section,
             });
         }
+
+        this.setState({
+            selectedSection: (selectedSection && section.id === selectedSection.id) ? null : section,
+        })
     };
 
     private handleDeleteSection = (section: IInfographicsSection) => {
 
-        const {infographicsDetails} = this.state;
+        const {infographicsDetails} = this.state
         const {infographics, width} = infographicsDetails
         const {x: column, y: row} = section.position
 
@@ -149,14 +147,8 @@ class Content extends React.Component<{}, IState> {
 
         const newSection: IInfographicsSection = {
             id,
-            position: {
-                x: column + 1,
-                y: row,
-            },
-            column: {
-                start: colEnd,
-                end: colEnd + 1,
-            },
+            position: {x: column + 1, y: row},
+            column: {start: colEnd, end: colEnd + 1},
             widthPercent: newSectionWidth,
             isActive: false,
         }
