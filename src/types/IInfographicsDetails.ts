@@ -1,6 +1,6 @@
 import {TInfographics} from './IInfographicsSection'
 
 export interface IInfographicsDetails {
-    widthPx: number,
+    width: number,
     infographics: TInfographics,
 }

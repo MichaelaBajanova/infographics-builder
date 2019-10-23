@@ -16,7 +16,7 @@ class Content extends React.Component<{}, IState> {
 
     state: IState = {
         infographicsDetails: {
-            widthPx: 400, // the default width of infographics could be set in "New infographics" form in the future
+            width: 400, // the default width of infographics could be set in "New infographics" form in the future
             infographics: [] as TInfographics,
         },
         lastUsedId: 0,
@@ -50,10 +50,10 @@ class Content extends React.Component<{}, IState> {
 
     private handleAddRow = () => {
         const {infographicsDetails, lastUsedId: id} = this.state
-        const {widthPx, infographics} = infographicsDetails
+        const {width, infographics} = infographicsDetails
 
         const newRow: IInfographicsRow = {
-            heightPx: 250,
+            height: 250,
             sections: [
                 {
                     id,
@@ -74,7 +74,7 @@ class Content extends React.Component<{}, IState> {
 
         this.setState({
             infographicsDetails: {
-                widthPx,
+                width: width,
                 infographics: [...infographics, newRow],
             },
             lastUsedId: id + 1,
@@ -99,7 +99,7 @@ class Content extends React.Component<{}, IState> {
     private handleDeleteSection = (section: IInfographicsSection) => {
 
         const {infographicsDetails} = this.state;
-        const {infographics, widthPx} = infographicsDetails
+        const {infographics, width} = infographicsDetails
         const {x: column, y: row} = section.position
 
         let infographicsCopy: TInfographics
@@ -132,7 +132,7 @@ class Content extends React.Component<{}, IState> {
 
         this.setState(produce(this.state, draftState => {
             draftState.infographicsDetails = {
-                widthPx,
+                width: width,
                 infographics: infographicsCopy,
             }
         }))
@@ -140,7 +140,7 @@ class Content extends React.Component<{}, IState> {
 
     private handleDivideSection = (section: IInfographicsSection) => {
         const {infographicsDetails, lastUsedId: id} = this.state
-        const {infographics, widthPx} = infographicsDetails
+        const {infographics, width} = infographicsDetails
         const {x: column, y: row} = section.position
         const {end: colEnd} = section.column
 
@@ -177,7 +177,7 @@ class Content extends React.Component<{}, IState> {
 
         this.setState(produce(this.state, draftState => {
             draftState.infographicsDetails = {
-                widthPx,
+                width: width,
                 infographics: infographicsUpdated,
             }
             ++draftState.lastUsedId
@@ -185,30 +185,30 @@ class Content extends React.Component<{}, IState> {
         }))
     }
 
-    private handleSetWidth = (widthPx: number) => {
+    private handleSetWidth = (width: number) => {
         const {infographicsDetails} = this.state
         const {infographics} = infographicsDetails
 
         this.setState(produce(this.state, draftState => {
             draftState.infographicsDetails = {
-                widthPx,
+                width: width,
                 infographics,
             }
         }))
     }
 
-    private handleSetHeight = (section: IInfographicsSection, heightPx: number) => {
+    private handleSetHeight = (section: IInfographicsSection, height: number) => {
         const {infographicsDetails} = this.state
-        const {infographics, widthPx} = infographicsDetails
+        const {infographics, width} = infographicsDetails
         const {y: row} = section.position
 
         const infographicsCopy = produce(infographics, draft => {
-            draft[row].heightPx = heightPx
+            draft[row].height = height
         })
 
         this.setState(produce(this.state, draftState => {
             draftState.infographicsDetails = {
-                widthPx,
+                width: width,
                 infographics: infographicsCopy,
             }
         }))

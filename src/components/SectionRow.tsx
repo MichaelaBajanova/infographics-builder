@@ -11,7 +11,7 @@ interface IProps {
 
 const SectionRow = (props: IProps) => {
     const {row, selectedSection, handleDeleteSection, handleToggleSelectSection} = props
-    const {sections, heightPx} = row
+    const {sections, height} = row
 
     const generateColumnTemplate = (): string => {
         let template = ''
@@ -23,7 +23,7 @@ const SectionRow = (props: IProps) => {
     }
 
     const style = {
-        height: `${heightPx}px`,
+        height: height,
         display: 'grid',
         gridTemplateColumns: generateColumnTemplate(),
     }

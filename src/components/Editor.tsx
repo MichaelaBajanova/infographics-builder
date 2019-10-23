@@ -9,8 +9,8 @@ interface IProps {
     selectedSection: IInfographicsSection | null,
     addSection: () => void,
     divideSection: (section: IInfographicsSection) => void,
-    setWidth: (widthPx: number) => void,
-    setHeight: (section: IInfographicsSection, heightPx: number) => void,
+    setWidth: (width: number) => void,
+    setHeight: (section: IInfographicsSection, height: number) => void,
 }
 
 interface IState {

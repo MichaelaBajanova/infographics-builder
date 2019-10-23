@@ -15,7 +15,7 @@ export interface IInfographicsSection {
 }
 
 export interface IInfographicsRow {
-    heightPx: number,
+    height: number,
     sections: IInfographicsSection[],
     columns: number,
 }

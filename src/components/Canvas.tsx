@@ -15,10 +15,10 @@ interface IProps {
 const Canvas: React.FC<IProps> = (props) => {
 
     const {infographicsDetails, selectedSection, handleToggleSelectSection, handleDeleteSection} = props;
-    const {infographics, widthPx} = infographicsDetails
+    const {infographics, width} = infographicsDetails
 
     const style = {
-        width: `${widthPx}px`
+        width: width,
     }
 
     const onCanvasClick = () => {
