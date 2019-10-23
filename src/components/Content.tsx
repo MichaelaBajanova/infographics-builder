@@ -9,7 +9,6 @@ interface IState {
     infographicsDetails: IInfographicsDetails,
     lastUsedId: number,
     selectedSection: IInfographicsSection | null,
-    columnsCount: number,
 }
 
 class Content extends React.Component<{}, IState> {
@@ -21,7 +20,6 @@ class Content extends React.Component<{}, IState> {
         },
         lastUsedId: 0,
         selectedSection: null,
-        columnsCount: 1,
     }
 
     render() {
@@ -42,7 +40,6 @@ class Content extends React.Component<{}, IState> {
                     selectedSection={selectedSection}
                     handleToggleSelectSection={this.handleToggleSelectSection}
                     handleDeleteSection={this.handleDeleteSection}
-                    columnsCount={this.state.columnsCount}
                 />
             </div>
         )

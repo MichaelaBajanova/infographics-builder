@@ -9,7 +9,6 @@ interface IProps {
     selectedSection: IInfographicsSection | null,
     handleToggleSelectSection: (section: IInfographicsSection) => void,
     handleDeleteSection: (section: IInfographicsSection) => void,
-    columnsCount: number,
 }
 
 const Canvas: React.FC<IProps> = (props) => {
