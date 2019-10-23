@@ -12,7 +12,7 @@ interface IState {
     columnsCount: number,
 }
 
-class AppWrapper extends React.Component<{}, IState> {
+class Content extends React.Component<{}, IState> {
 
     state: IState = {
         infographicsDetails: {
@@ -215,4 +215,4 @@ class AppWrapper extends React.Component<{}, IState> {
     }
 }
 
-export default AppWrapper
+export default Content

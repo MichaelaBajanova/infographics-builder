@@ -1,13 +1,13 @@
 import React from 'react';
 import Header from './Header';
 import '../styles/App.scss';
-import AppWrapper from "./AppWrapper";
+import Content from "./Content";
 
 const App = () => {
     return (
         <div className="app">
             <Header/>
-            <AppWrapper/>
+            <Content/>
         </div>
     );
 }
