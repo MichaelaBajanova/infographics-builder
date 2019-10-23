@@ -32,8 +32,9 @@ const Canvas: React.FC<IProps> = (props) => {
             <div className="canvas">
                 <div className={`infographics ${!infographics.length ? 'infographics--empty' : ''}`} style={style}>
                     {infographics.map(
-                        (row) => (
+                        (row, index) => (
                             <SectionRow
+                                key={index}
                                 row={row}
                                 selectedSection={selectedSection}
                                 handleToggleSelectSection={handleToggleSelectSection}
