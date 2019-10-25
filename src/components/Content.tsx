@@ -89,19 +89,24 @@ class Content extends React.Component<{}, IState> {
 
         let infographicsCopy: TInfographics
         if (infographics[row].sections.length === 1) {
+            // if there is only one section remaining in particular row R
+            // we need to move every section in rows under R to y - 1
             infographicsCopy = produce(infographics, draft => {
                 for (let i = row + 1; i < draft.length; ++i) {
                     draft[i].sections.map(section => --section.position.y)
                 }
-                draft.splice(row, 1)
+                draft.splice(row, 1) // removing whole row
             })
         } else {
             infographicsCopy = produce(infographics, draft => {
+                // if section S to be deleted is the last in row then enlarge the one before S
                 if (column === draft[row].sections.length - 1) {
                     draft[row].sections[column - 1].widthPercent += section.widthPercent
+                // otherwise enlarge the one after S
                 } else {
                     draft[row].sections[column + 1].widthPercent += section.widthPercent
                 }
+                // each section after S needs to be moved to x - 1 and have their column moved as well
                 for (let i = column + 1; i < draft[row].sections.length; ++i) {
                     --draft[row].sections[i].position.x
                     --draft[row].sections[i].column.start
@@ -127,10 +132,12 @@ class Content extends React.Component<{}, IState> {
 
         const newSectionWidth: number = section.widthPercent / 2
 
+        // update width of the divided section
         const dividedSectionUpdated = produce(section, draft => {
             draft.widthPercent = newSectionWidth
         })
 
+        // create a new section that will be placed after the one being divided
         const newSection: IInfographicsSection = {
             id,
             position: {x: column + 1, y: row},
@@ -141,8 +148,10 @@ class Content extends React.Component<{}, IState> {
 
         const infographicsUpdated = produce(infographics, draft => {
             draft[row].sections[column] = dividedSectionUpdated
+            // add new section S after the one that is divided
             draft[row].sections.splice(column + 1, 0, newSection)
             ++draft[row].columns
+            // each section after section S needs to be moved x + 1 and also move column
             for (let i = column + 2; i < draft[row].sections.length; ++i) {
                 ++draft[row].sections[i].position.x
                 ++draft[row].sections[i].column.start
@@ -155,7 +164,7 @@ class Content extends React.Component<{}, IState> {
                 width: width,
                 infographics: infographicsUpdated,
             }
-            ++draftState.nextId
+            ++draftState.nextId // needs to be increased because new section was added
             draftState.selectedSection = dividedSectionUpdated
         }))
     }
