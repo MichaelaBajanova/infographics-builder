@@ -7,7 +7,7 @@ import produce from 'immer'
 
 interface IState {
     infographicsDetails: IInfographicsDetails,
-    lastUsedId: number,
+    nextId: number,
     selectedSection: IInfographicsSection | null,
 }
 
@@ -18,7 +18,7 @@ class Content extends React.Component<{}, IState> {
             width: 400, // the default width of infographics could be set in "New infographics" form in the future
             infographics: [] as TInfographics,
         },
-        lastUsedId: 0,
+        nextId: 0,
         selectedSection: null,
     }
 
@@ -46,7 +46,7 @@ class Content extends React.Component<{}, IState> {
     }
 
     private handleAddRow = () => {
-        const {infographicsDetails, lastUsedId: id} = this.state
+        const {infographicsDetails, nextId: id} = this.state
         const {width, infographics} = infographicsDetails
 
         const newRow: IInfographicsRow = {
@@ -68,7 +68,7 @@ class Content extends React.Component<{}, IState> {
                 width: width,
                 infographics: [...infographics, newRow],
             },
-            lastUsedId: id + 1,
+            nextId: id + 1,
         })
     };
 
@@ -134,7 +134,7 @@ class Content extends React.Component<{}, IState> {
     };
 
     private handleDivideSection = (section: IInfographicsSection) => {
-        const {infographicsDetails, lastUsedId: id} = this.state
+        const {infographicsDetails, nextId: id} = this.state
         const {infographics, width} = infographicsDetails
         const {x: column, y: row} = section.position
         const {end: colEnd} = section.column
@@ -169,7 +169,7 @@ class Content extends React.Component<{}, IState> {
                 width: width,
                 infographics: infographicsUpdated,
             }
-            ++draftState.lastUsedId
+            ++draftState.nextId
             draftState.selectedSection = dividedSectionUpdated
         }))
     }
