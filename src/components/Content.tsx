@@ -76,16 +76,6 @@ class Content extends React.Component<{}, IState> {
         const {selectedSection} = this.state
 
         // if already selected section is clicked again, unselect it
-        if (selectedSection && section.id === selectedSection.id) {
-            this.setState({
-                selectedSection: null,
-            })
-        } else {
-            this.setState({
-                selectedSection: section,
-            });
-        }
-
         this.setState({
             selectedSection: (selectedSection && section.id === selectedSection.id) ? null : section,
         })
@@ -101,11 +91,7 @@ class Content extends React.Component<{}, IState> {
         if (infographics[row].sections.length === 1) {
             infographicsCopy = produce(infographics, draft => {
                 for (let i = row + 1; i < draft.length; ++i) {
-                    draft[i].sections.forEach(section => {
-                        produce(section, sectionDraft => {
-                            --sectionDraft.position.y
-                        })
-                    })
+                    draft[i].sections.map(section => --section.position.y)
                 }
                 draft.splice(row, 1)
             })
