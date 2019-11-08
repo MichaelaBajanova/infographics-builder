@@ -14,15 +14,15 @@ interface IProps {
 }
 
 interface IState {
-    widthInputValue: string,
-    heightInputValue: string,
+    widthInputValue: number,
+    heightInputValue: number,
 }
 
 class Editor extends React.Component<IProps, IState> {
 
     state: IState = {
-        widthInputValue: '',
-        heightInputValue: '',
+        widthInputValue: this.props.infographicsDetails.width,
+        heightInputValue: 0,
     }
 
     render() {
@@ -44,7 +44,7 @@ class Editor extends React.Component<IProps, IState> {
                     </Button>
                     <form onSubmit={this.onWidthFormSubmit}>
                         <label>Width:</label>
-                        <input name="width" value={this.state.widthInputValue} onChange={this.onWidthInputChange} type="text"/>
+                        <input name="width" value={this.state.widthInputValue} onChange={this.onWidthInputChange} type="number"/>
                     </form>
                     <form onSubmit={this.onHeightFormSubmit}>
                         <label>Height:</label>
@@ -52,7 +52,7 @@ class Editor extends React.Component<IProps, IState> {
                             name="height"
                             value={this.state.heightInputValue}
                             onChange={this.onHeightInputChange}
-                            type="text"
+                            type="number"
                             disabled={!selectedSection}
                         />
                     </form>
