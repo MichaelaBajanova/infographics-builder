@@ -1,7 +1,7 @@
 import React from 'react'
 import '../styles/InfographicsSection.scss'
-import Icon from './Icon'
-import {EIconName} from '../enums/EIconName'
+import Icon from './ui/Icon'
+import {EIconName, EIconType} from '../enums/EIconName'
 import {IInfographicsSection} from '../types/IInfographicsSection'
 
 interface IProps {
@@ -36,7 +36,7 @@ const InfographicsSection: React.FC<IProps> = (props) => {
                 onClick={onInfographicsSectionClick}
             >
                 <span className="infographics__delete-infographics" onClick={onDeleteIconClick}>
-                    <Icon name={EIconName.CLEAR}/>
+                    <Icon name={EIconName.CLEAR} type={EIconType.SOLID}/>
                 </span>
             </div>
         </div>
