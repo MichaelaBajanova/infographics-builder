@@ -1,6 +1,6 @@
 import React from 'react'
 import {IInfographicsSection, TInfographics, IInfographicsRow} from '../types/IInfographicsSection'
-import Editor from './Editor';
+import ToolsMenu from './ToolsMenu';
 import Canvas from './Canvas'
 import {IInfographicsDetails} from '../types/IInfographicsDetails'
 import produce from 'immer'
@@ -27,7 +27,7 @@ class Content extends React.Component<{}, IState> {
 
         return (
             <div className="app-wrapper">
-                <Editor
+                <ToolsMenu
                     infographicsDetails={infographicsDetails}
                     selectedSection={selectedSection}
                     addSection={this.handleAddRow}

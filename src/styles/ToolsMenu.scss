@@ -1,0 +1,12 @@
+@import './colors/base-colors';
+@import './colors/button-colors';
+
+.scope__ToolsMenu {
+  width: 75px;
+
+  .tools-menu {
+    height: 100vh;
+    color: #fff;
+    background-image: linear-gradient(to bottom, #211844, #341d4c, #472152, #5a2658, #6c2b5c);
+  }
+}
