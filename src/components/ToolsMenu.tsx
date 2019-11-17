@@ -7,7 +7,7 @@ import 'react-tippy/dist/tippy.css'
 import ToolsMenuItem from './ToolsMenuItem'
 import {EToolsTooltips} from '../enums/EToolsTooltips'
 import SizeForm from './SizeForm'
-import ChartMenu from './ChartMenu'
+// import ChartMenu from './ChartMenu'
 
 interface IProps {
     infographicsDetails: IInfographicsDetails,
@@ -70,19 +70,20 @@ class ToolsMenu extends React.Component<IProps, IState> {
                         tooltip={EToolsTooltips.PICK_THEME}
                         className={'color-theme'}
                     />
-                    <ToolsMenuItem
-                        iconName={EIconName.BAR_CHART}
-                        action={this.handleOpenChartMenu}
-                        tooltip={EToolsTooltips.ADD_CHART}
-                        disabled={selectedSection === null}
-                        className={'add-chart'}
-                    />
-                    {isChartMenuOpen &&
-                        <ChartMenu
-                            infographicsDetails={infographicsDetails}
-                            selectedSection={selectedSection}
-                        />
-                    }
+                    {/*TODO uncomment later when charts are available*/}
+                    {/*<ToolsMenuItem*/}
+                    {/*    iconName={EIconName.BAR_CHART}*/}
+                    {/*    action={this.handleOpenChartMenu}*/}
+                    {/*    tooltip={EToolsTooltips.ADD_CHART}*/}
+                    {/*    disabled={selectedSection === null}*/}
+                    {/*    className={'add-chart'}*/}
+                    {/*/>*/}
+                    {/*{isChartMenuOpen &&*/}
+                    {/*    <ChartMenu*/}
+                    {/*        infographicsDetails={infographicsDetails}*/}
+                    {/*        selectedSection={selectedSection}*/}
+                    {/*    />*/}
+                    {/*}*/}
                 </div>
             </div>
         );
