@@ -3,13 +3,11 @@ describe('Divide Infographics Sections', () => {
     it('Divide section', () => {
         cy
             .visit('')
-            .get('.button')
-            .contains('Add new section')
+            .get('.tools-menu__item--add-section')
             .click()
             .get('.infographics__infographics-section')
             .click()
-            .get('.button')
-            .contains('Divide')
+            .get('.tools-menu__item--divide-section')
             .click()
             .get('.infographics__infographics-section')
             .its('length')

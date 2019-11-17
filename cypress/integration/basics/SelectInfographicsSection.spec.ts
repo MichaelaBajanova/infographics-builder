@@ -3,20 +3,29 @@ describe('Select Infographics Section', () => {
     it('Select section', () => {
         cy
             .visit('')
-            .get('.button')
-            .contains('Add new section')
+            .get('.tools-menu__item--add-section')
             .click()
-            .get('.button')
-            .contains('Divide')
+            .get('.tools-menu__item--divide-section')
             .should('be.disabled')
-            .get('.infographics__infographics-section ')
+            .get('.infographics__infographics-section')
             .click()
             .get('.infographics__infographics-section--active')
             .should('exist')
-            .get('.button')
-            .contains('Divide')
+            .get('.tools-menu__item--divide-section')
             .should('not.be.disabled')
     });
 
-    // TODO: unselect test when it works better
+    it('Unselect section', () => {
+        cy
+            .visit('')
+            .get('.tools-menu__item--add-section')
+            .click()
+            .get('.infographics__infographics-section')
+            .click()
+            .get('.infographics__infographics-section--active')
+            .should('exist')
+            .click()
+            .get('.infographics__infographics-section--active')
+            .should('not.exist')
+    })
 });
