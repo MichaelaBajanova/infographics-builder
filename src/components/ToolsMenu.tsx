@@ -41,17 +41,20 @@ class ToolsMenu extends React.Component<IProps, IState> {
                         iconName={EIconName.ADD}
                         action={addSection}
                         tooltip={EToolsTooltips.ADD_SECTION}
+                        className={'add-section'}
                     />
                     <ToolsMenuItem
                         iconName={EIconName.CUT}
                         action={this.handleDivideColumn}
                         tooltip={(selectedSection === null) ? EToolsTooltips.DIVIDE_SECTION_DISABLED : EToolsTooltips.DIVIDE_SECTION}
                         disabled={selectedSection === null}
+                        className={'divide-section'}
                     />
                     <ToolsMenuItem
                         iconName={EIconName.SIZE}
                         action={this.handleOpenSizeSettings}
                         tooltip={EToolsTooltips.CHANGE_SIZE}
+                        className={'size'}
                     />
                     {isSizeSettingOpen &&
                         <SizeForm
@@ -65,12 +68,14 @@ class ToolsMenu extends React.Component<IProps, IState> {
                         iconName={EIconName.COLOR_THEME}
                         action={addSection}
                         tooltip={EToolsTooltips.PICK_THEME}
+                        className={'color-theme'}
                     />
                     <ToolsMenuItem
                         iconName={EIconName.BAR_CHART}
                         action={this.handleOpenChartMenu}
                         tooltip={EToolsTooltips.ADD_CHART}
                         disabled={selectedSection === null}
+                        className={'add-chart'}
                     />
                     {isChartMenuOpen &&
                         <ChartMenu

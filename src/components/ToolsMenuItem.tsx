@@ -9,10 +9,11 @@ interface IProps {
     disabled?: boolean
     tooltip?: string,
     iconName: string,
+    className?: string
 }
 
 const ToolsMenuItem = (props: IProps) => {
-    const {iconName, action, tooltip, disabled} = props
+    const {iconName, action, tooltip, disabled, className} = props
 
     return (
         <div className={'scope__ToolsMenuItem'}>
@@ -26,7 +27,7 @@ const ToolsMenuItem = (props: IProps) => {
                 arrowSize={'small'}
             >
                 <button
-                    className={'tools-menu__item'}
+                    className={`tools-menu__item ${className ? `tools-menu__item--${className}` : ''}`}
                     onClick={action}
                     disabled={disabled}
                 >
