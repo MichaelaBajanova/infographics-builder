@@ -13,14 +13,8 @@ const SectionRow = (props: IProps) => {
     const {row, selectedSection, handleDeleteSection, handleToggleSelectSection} = props
     const {sections, height} = row
 
-    const generateColumnTemplate = (): string => {
-        let template = ''
-        row.sections.forEach(section => {
-            template += `${section.widthPercent}% `
-        })
-
-        return template.trim()
-    }
+    const generateColumnTemplate = (): string =>
+        row.sections.reduce((acc, section) => acc += `${section.widthPercent}% `, '').trim()
 
     const style = {
         height: height,
