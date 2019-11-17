@@ -1,6 +1,6 @@
-import React from 'react';
-import '../styles/Canvas.scss';
-import {IInfographicsSection} from '../types/IInfographicsSection';
+import React from 'react'
+import '../styles/Canvas.scss'
+import {IInfographicsSection} from '../types/IInfographicsSection'
 import {IInfographicsDetails} from '../types/IInfographicsDetails'
 import SectionRow from './SectionRow'
 
@@ -13,7 +13,7 @@ interface IProps {
 
 const Canvas: React.FC<IProps> = (props) => {
 
-    const {infographicsDetails, selectedSection, handleToggleSelectSection, handleDeleteSection} = props;
+    const {infographicsDetails, selectedSection, handleToggleSelectSection, handleDeleteSection} = props
     const {infographics, width} = infographicsDetails
 
     const style = {
@@ -43,7 +43,7 @@ const Canvas: React.FC<IProps> = (props) => {
                 </div>
             </div>
         </div>
-    );
-};
+    )
+}
 
-export default Canvas;
+export default Canvas
