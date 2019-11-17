@@ -25,13 +25,15 @@ const SectionRow = (props: IProps) => {
     return (
         <div className={'section-row'} style={style}>
             {sections.map(section => {
-                let isActive = false
-                if (selectedSection) {
-                    isActive = section.id === selectedSection.id
+                const isActive = selectedSection ? section.id === selectedSection.id : false
+                const sectionUpdated = {
+                    ...section,
+                    isActive,
                 }
+
                 return <InfographicsSection
                     key={section.id}
-                    section={{...section, isActive}}
+                    section={sectionUpdated}
                     handleToggleSelectSection={handleToggleSelectSection}
                     handleDeleteSection={handleDeleteSection}
                 />

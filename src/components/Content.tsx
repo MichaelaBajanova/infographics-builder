@@ -32,8 +32,8 @@ class Content extends React.Component<{}, IState> {
                     selectedSection={selectedSection}
                     addSection={this.handleAddRow}
                     divideSection={this.handleDivideSection}
-                    setWidth={this.handleSetWidth}
-                    setHeight={this.handleSetHeight}
+                    setInfographicsWidth={this.handleSetInfographicsWidth}
+                    setRowHeight={this.handleSetRowHeight}
                 />
                 <Canvas
                     infographicsDetails={infographicsDetails}
@@ -169,7 +169,7 @@ class Content extends React.Component<{}, IState> {
         }))
     }
 
-    private handleSetWidth = (width: number) => {
+    private handleSetInfographicsWidth = (width: number) => {
         const {infographicsDetails} = this.state
         const {infographics} = infographicsDetails
 
@@ -181,7 +181,7 @@ class Content extends React.Component<{}, IState> {
         }))
     }
 
-    private handleSetHeight = (section: IInfographicsSection, height: number) => {
+    private handleSetRowHeight = (section: IInfographicsSection, height: number) => {
         const {infographicsDetails} = this.state
         const {infographics, width} = infographicsDetails
         const {y: row} = section.position

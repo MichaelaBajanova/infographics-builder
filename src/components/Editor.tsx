@@ -9,8 +9,8 @@ interface IProps {
     selectedSection: IInfographicsSection | null,
     addSection: () => void,
     divideSection: (section: IInfographicsSection) => void,
-    setWidth: (width: number) => void,
-    setHeight: (section: IInfographicsSection, height: number) => void,
+    setInfographicsWidth: (width: number) => void,
+    setRowHeight: (section: IInfographicsSection, height: number) => void,
 }
 
 interface IState {
@@ -69,20 +69,20 @@ class Editor extends React.Component<IProps, IState> {
         }
     }
 
-    private onWidthFormSubmit = (event: any) => {
+    private onWidthFormSubmit = (event: React.FormEvent) => {
         const {widthInputValue} = this.state
-        const {setWidth} = this.props
+        const {setInfographicsWidth} = this.props
 
         event.preventDefault()
-        setWidth(Number(widthInputValue))
+        setInfographicsWidth(Number(widthInputValue))
     }
 
-    private onHeightFormSubmit = (event: any) => {
+    private onHeightFormSubmit = (event: React.FormEvent) => {
         const {heightInputValue} = this.state
-        const {setHeight, selectedSection} = this.props
+        const {setRowHeight, selectedSection} = this.props
 
         event.preventDefault()
-        setHeight(selectedSection!, Number(heightInputValue))
+        setRowHeight(selectedSection!, Number(heightInputValue))
     }
 
     private onWidthInputChange = (event: any) => {
