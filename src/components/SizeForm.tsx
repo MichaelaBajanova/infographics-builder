@@ -29,7 +29,7 @@ class SizeForm extends React.Component<IProps, IState> {
 
         return (
             <div className={'scope__SizeForm'}>
-                <form onSubmit={this.onWidthFormSubmit}>
+                <form className={'width-form'} onSubmit={this.onWidthFormSubmit}>
                     <label htmlFor={'width'}>
                         <Icon name={EIconName.WIDTH} type={EIconType.SOLID}/>
                     </label>
@@ -41,7 +41,7 @@ class SizeForm extends React.Component<IProps, IState> {
                         type="number"
                     />
                 </form>
-                <form onSubmit={this.onHeightFormSubmit}>
+                <form className={'height-form'} onSubmit={this.onHeightFormSubmit}>
                     <label htmlFor={'height'}>
                         <Icon name={EIconName.HEIGHT} type={EIconType.SOLID}/>
                     </label>

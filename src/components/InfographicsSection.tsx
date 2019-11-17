@@ -13,7 +13,7 @@ interface IProps {
 const InfographicsSection: React.FC<IProps> = (props) => {
 
     const {section, handleToggleSelectSection, handleDeleteSection} = props;
-    const {column, isActive} = section
+    const {id, column, isActive} = section
 
     let infographicsSectionStyle
     infographicsSectionStyle = {
@@ -32,6 +32,7 @@ const InfographicsSection: React.FC<IProps> = (props) => {
     return (
         <div className="scope__InfographicsSection" style={infographicsSectionStyle}>
             <div
+                id={`section-${id}`}
                 className={`infographics__infographics-section ${isActive ? 'infographics__infographics-section--active' : ''}`}
                 onClick={onInfographicsSectionClick}
             >
