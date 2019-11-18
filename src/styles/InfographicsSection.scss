@@ -1,11 +1,13 @@
+@import './Canvas';
+@import './colors/base-colors';
+
 .scope__InfographicsSection {
   .infographics__infographics-section {
-    height: 150px;
-    width: 300px;
-    border: 1px solid #000000;
+    height: 100%;
+    border: 1px solid $surface-dark;
 
     &--active {
-      border: 1px dashed #000000;
+      border: 1px dashed #d7d7d7;
     }
   }
 

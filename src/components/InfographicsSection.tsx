@@ -1,29 +1,41 @@
-import React from 'react';
+import React from 'react'
 import '../styles/InfographicsSection.scss'
-import Icon from './Icon';
-import {EIconName} from '../enums/EIconName';
+import Icon from './Icon'
+import {EIconName} from '../enums/EIconName'
+import {IInfographicsSection} from '../types/IInfographicsSection'
 
 interface IProps {
-    id: number,
-    isActive: boolean,
-    handleDeleteSection: (id: number) => void,
+    section: IInfographicsSection,
+    handleToggleSelectSection: (section: IInfographicsSection) => void,
+    handleDeleteSection: (section: IInfographicsSection) => void,
 }
 
 const InfographicsSection: React.FC<IProps> = (props) => {
 
-    const {id, isActive, handleDeleteSection} = props;
+    const {section, handleToggleSelectSection, handleDeleteSection} = props;
+    const {column, isActive} = section
 
-    const onDeleteSection = () => {
-        handleDeleteSection(id);
+    let infographicsSectionStyle
+    infographicsSectionStyle = {
+        gridColumn: `${column.start} / ${column.end}`,
+    }
+
+    const onInfographicsSectionClick = (event: React.MouseEvent) => {
+        event.stopPropagation()
+        handleToggleSelectSection(section);
+    };
+
+    const onDeleteIconClick = () => {
+        handleDeleteSection(section);
     };
 
     return (
-        <div className="scope__InfographicsSection">
+        <div className="scope__InfographicsSection" style={infographicsSectionStyle}>
             <div
                 className={`infographics__infographics-section ${isActive ? 'infographics__infographics-section--active' : ''}`}
+                onClick={onInfographicsSectionClick}
             >
-                Section #{id + 1}
-                <span className="infographics__delete-infographics" onClick={onDeleteSection}>
+                <span className="infographics__delete-infographics" onClick={onDeleteIconClick}>
                     <Icon name={EIconName.CLEAR}/>
                 </span>
             </div>
@@ -31,4 +43,4 @@ const InfographicsSection: React.FC<IProps> = (props) => {
     );
 };
 
-export default React.memo(InfographicsSection);
+export default InfographicsSection

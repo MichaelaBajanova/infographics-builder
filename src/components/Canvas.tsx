@@ -1,35 +1,49 @@
-import React from 'react';
-import '../styles/Canvas.scss';
-import {IInfographicsSection} from '../types/TInterfaceSection';
-import InfographicsSection from './InfographicsSection';
+import React from 'react'
+import '../styles/Canvas.scss'
+import {IInfographicsSection} from '../types/IInfographicsSection'
+import {IInfographicsDetails} from '../types/IInfographicsDetails'
+import SectionRow from './SectionRow'
 
 interface IProps {
-    infographicsSections: IInfographicsSection[],
-    selectedSectionId: number | null,
-    handleDeleteSection: (id: number) => void,
+    infographicsDetails: IInfographicsDetails,
+    selectedSection: IInfographicsSection | null,
+    handleToggleSelectSection: (section: IInfographicsSection) => void,
+    handleDeleteSection: (section: IInfographicsSection) => void,
 }
 
 const Canvas: React.FC<IProps> = (props) => {
 
-    const {infographicsSections, selectedSectionId, handleDeleteSection} = props;
+    const {infographicsDetails, selectedSection, handleToggleSelectSection, handleDeleteSection} = props
+    const {infographics, width} = infographicsDetails
+
+    const style = {
+        width: width,
+    }
+
+    const onCanvasClick = () => {
+        if (selectedSection !== null) {
+            handleToggleSelectSection(selectedSection)
+        }
+    }
 
     return (
-        <div className="scope__Canvas">
+        <div className="scope__Canvas" onClick={onCanvasClick}>
             <div className="canvas">
-                <div className="infographics">
-                    {infographicsSections.map(
-                        (infographicsSection) => (
-                            <InfographicsSection
-                                id={infographicsSection.id}
-                                key={infographicsSection.id}
-                                isActive={infographicsSection.id === selectedSectionId}
+                <div className={`infographics ${!infographics.length ? 'infographics--empty' : ''}`} style={style}>
+                    {infographics.map(
+                        (row, index) => (
+                            <SectionRow
+                                key={index}
+                                row={row}
+                                selectedSection={selectedSection}
+                                handleToggleSelectSection={handleToggleSelectSection}
                                 handleDeleteSection={handleDeleteSection}
                             />)
                     )}
                 </div>
             </div>
         </div>
-    );
-};
+    )
+}
 
-export default Canvas;
+export default Canvas
