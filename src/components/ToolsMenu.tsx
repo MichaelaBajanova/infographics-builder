@@ -14,8 +14,8 @@ interface IProps {
     selectedSection: IInfographicsSection | null,
     addSection: () => void,
     divideSection: (section: IInfographicsSection) => void,
-    setWidth: (width: number) => void,
-    setHeight: (section: IInfographicsSection, height: number) => void,
+    setInfographicsWidth: (width: number) => void,
+    setRowHeight: (section: IInfographicsSection, height: number) => void,
 }
 
 interface IState {
@@ -31,7 +31,7 @@ class ToolsMenu extends React.Component<IProps, IState> {
     }
 
     render() {
-        const {selectedSection, addSection, infographicsDetails, setWidth, setHeight} = this.props
+        const {selectedSection, addSection, infographicsDetails, setInfographicsWidth, setRowHeight} = this.props
         const {isSizeSettingOpen, isChartMenuOpen} = this.state
 
         return (
@@ -60,8 +60,8 @@ class ToolsMenu extends React.Component<IProps, IState> {
                         <SizeForm
                             infographicsDetails={infographicsDetails}
                             selectedSection={selectedSection}
-                            setWidth={setWidth}
-                            setHeight={setHeight}
+                            setWidth={setInfographicsWidth}
+                            setHeight={setRowHeight}
                         />
                     }
                     <ToolsMenuItem
