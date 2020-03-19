@@ -1,0 +1,34 @@
+@import '../colors/base-colors';
+
+.scope__SomethingWentWrongScreen {
+  .something-went-wrong {
+    width: 500px;
+    margin: auto;
+    text-align: center;
+    font-size: 24px;
+
+    .illustration {
+      margin: 50px 0 20px 0;
+      width: 500px;
+      height: 300px;
+      background-image: url('../../svg/undraw_cancel_u1it.svg');
+      background-repeat: no-repeat;
+    }
+
+    .home {
+      margin-top: 20px;
+      display: block;
+      font-size: 14px;
+      text-decoration: none;
+      color: $button-hot-pink;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &:active {
+        color: $button-hot-pink-dark;
+      }
+    }
+  }
+}

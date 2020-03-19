@@ -1,0 +1,44 @@
+@import '../colors/base-colors';
+
+.scope__SignInPage {
+  height: 100vh;
+  background-image: $purple-gradient-to-bottom;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .text {
+    color: #fff;
+    font-size: 24px;
+  }
+
+  .sign-in-button {
+    margin: 20px auto 0 auto;
+    display: block;
+    border: 1px solid $button-hot-pink;
+    border-radius: 30px;
+    background-color: transparent;
+    color: $button-hot-pink;
+    padding: 5px 20px;
+    font-size: 16px;
+
+    &:hover {
+      border: 1px solid $button-hot-pink;
+      background-color: $button-hot-pink;
+      color: #fff;
+      transition: background-color 300ms linear;
+    }
+
+    &:active {
+      border: 1px solid $button-hot-pink-dark;
+      background-color: $button-hot-pink-dark;
+      color: #fff;
+      outline: none;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

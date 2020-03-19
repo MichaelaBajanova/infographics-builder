@@ -1,0 +1,1 @@
+export const INFOGRAPHICS_PREVIEW_RATIO = 3

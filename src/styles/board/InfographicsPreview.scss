@@ -1,0 +1,66 @@
+@import '../colors/base-colors';
+@import '../constants/infographics-preview-contants';
+
+.scope__InfographicsPreview {
+    .infographics-preview-container {
+      width: $infographics-preview-width;
+      text-align: center;
+      margin: 0 30px 30px 30px;
+
+      .infographics-preview-top, .icon {
+        height: 12px;
+        font-size: 12px;
+      }
+
+      .infographics-tools {
+        display: inline;
+        float: right;
+
+        .tool-icon {
+          margin-left: 5px;
+          color: #BCBEC0;
+
+          &--share, &--edit, &--trash {
+            &:hover {
+              color: $button-hot-pink;
+            }
+          }
+        }
+      }
+
+      .infographics-container {
+        width: $infographics-preview-width;
+        border: 1px solid #d1d1d1;
+        margin-top: 8px;
+        height: $infographics-preview-height;
+        overflow: hidden;
+        cursor: pointer;
+
+        &:hover {
+          box-shadow: 3px 3px 10px 0 #D1D3D4;
+          border: 1px solid #bbbbbb;
+        }
+      }
+
+      .infographics {
+        height: $infographics-preview-height;
+        display: inline-block;
+        margin: 0 -100%; // centers infographics horizontally
+      }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+  .scope__InfographicsPreview {
+    display: inline-block;
+    margin: 0 auto 20px auto;
+
+    .infographics-preview-container {
+      margin-bottom: 0;
+
+      .infographics-container {
+        margin: 8px auto 0 auto;
+      }
+    }
+  }
+}

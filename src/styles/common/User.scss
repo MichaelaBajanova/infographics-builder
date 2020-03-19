@@ -1,0 +1,70 @@
+@import '../constants/header-constants';
+@import '../constants/board-header-contants';
+@import '../colors/base-colors';
+
+.scope__User {
+  z-index: 9999;
+  background-color: $header-background-color;
+  margin-left: auto;
+  width: calc(100% - #{$home-link-width} - 60px);
+
+  .user {
+    height: $header-height;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    &--clickable {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &__photo, &__avatar {
+      margin: 10px 0 10px 10px;
+      border-radius: 50%;
+    }
+
+    &__photo {
+      width: 38.5px;
+      height: 38.5px;
+    }
+
+    &__avatar {
+      width: 38.5px;
+      height: 38.5px;
+      background-image: url('../../svg/undraw_male_avatar_323b.svg');
+      background-repeat: no-repeat;
+    }
+
+    &__name {
+      color: #fff;
+    }
+  }
+
+  .arrow-icon {
+    margin-left: 10px;
+
+    &--menu-displayed {
+      transition-timing-function: linear;
+      transition: 0.25s;
+      transform: rotate(180deg);
+    }
+
+    &--menu-hidden {
+      transition-timing-function: linear;
+      transition: 0.25s;
+      transform: rotate(0deg);
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .user {
+    &__name {
+      display: none;
+    }
+  }
+}

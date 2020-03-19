@@ -1,0 +1,58 @@
+.scope__ShareInfographicsModal {
+
+  .modal__content {
+    margin: 20px;
+    font-size: 14px;
+  }
+
+  .link-container {
+    margin-bottom: 20px;
+
+    .link-input {
+      width: 535.12px;
+      border: none;
+      background-color: #F0F0F0;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      padding: 10px;
+    }
+
+    .copy-button {
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      background-color: #4c4c4c;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 11px;
+    }
+
+    .copied-notification {
+      font-size: 12px;
+      opacity: 0;
+      float: right;
+      margin-top: 3px;
+
+      &--visible {
+        display: inline-block;
+        animation: fadeOut ease-in 2.5s;
+      }
+    }
+
+    @keyframes fadeOut {
+      from {
+        opacity: 1
+      }
+      to {
+        opacity: 0
+      }
+    }
+  }
+
+  .share-form {
+    margin-top: 10px;
+
+    label {
+      margin: 0 10px 0 3px;
+    }
+  }
+}

@@ -1,0 +1,63 @@
+.scope__SeriesInput {
+  ul {
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .graph-series {
+    background-color: #F0F0F0;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    display: inline-flex;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    justify-content: center;
+    font-size: 12px;
+
+    &__delete {
+      margin-left: 10px;
+      color: rgba(0, 0, 0, 0.25);
+
+      &:hover {
+        color: rgba(0, 0, 0, 0.5);
+      }
+
+      &:active {
+        color: rgba(0, 0, 0, 0.75);
+      }
+
+      .icon {
+        font-size: 14px;
+      }
+    }
+  }
+
+  button {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    color: rgba(0, 0, 0, 0.25);
+
+    &:hover {
+      color: rgba(0, 0, 0, 0.5);
+    }
+
+    &:active {
+      color: rgba(0, 0, 0, 0.75);
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  input {
+    margin-right: 10px;
+  }
+
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}

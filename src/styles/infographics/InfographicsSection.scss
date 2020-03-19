@@ -1,0 +1,313 @@
+@import '../colors/base-colors';
+@import '../colors/theme-colors';
+@import '../constants/infographics-preview-contants';
+
+.scope__InfographicsSection {
+  &:hover {
+    border: 1px dashed #bdbdbd;
+
+    .infographics__delete-infographics {
+      display: inline;
+      position: absolute;
+      right: 0;
+      margin: 3px 5px 5px;
+      cursor: default;
+      color: rgba(0, 0, 0, 0.25);
+
+      &:hover {
+        color: rgba(0, 0, 0, 0.5);
+      }
+
+      &:active {
+        color: rgba(0, 0, 0, 0.5);
+        margin-top: 2px;
+      }
+    }
+  }
+
+  &--active {
+    border: 1px dashed #969696;
+
+    &:hover {
+      border: 1px dashed #969696;
+    }
+  }
+}
+
+.scope__InfographicsSection, .scope__InfographicsSectionPreview {
+  .infographics__infographics-section {
+    height: 100%;
+    position: relative;
+  }
+
+  .content {
+    position: absolute;
+    width: 100%;
+
+    &__chart {
+      margin: auto auto;
+    }
+
+    &__timeline {
+      width: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    &__text {
+      width: 100%;
+      margin: 10px;
+
+      h1, h2 {
+        margin: 10px 0;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      .ql-align-center {
+        text-align: center;
+      }
+
+      .ql-align-right {
+        text-align: right;
+      }
+
+      .ql-align-justify {
+        text-align: justify;
+      }
+
+      pre {
+        padding: 10px;
+        border-radius: 5px;
+      }
+
+      blockquote {
+        margin: 30px auto;
+        font-style: italic;
+        padding: 1.2em 30px 1.2em 75px;
+        line-height: 1.6;
+        position: relative;
+
+        &::before{
+          content: "\201C";
+          font-size: 4em;
+          position: absolute;
+          left: 10px;
+          top: -10px;
+        }
+      }
+
+      &--GRAY_TONES {
+        a {
+          color: $gray-tones-ternary;
+        }
+
+        blockquote {
+          border-left: 8px solid $gray-tones-ternary;
+          background-color: rgba(185, 185, 185, 0.25);
+
+          &::before{
+            color: $gray-tones-ternary;
+          }
+        }
+
+        pre {
+          background-color: rgba(185, 185, 185, 0.1);
+        }
+
+        h1 {
+          color: $gray-tones-ternary;
+          font-family: 'Galada', cursive;
+        }
+
+        h2 {
+          color: $gray-tones-secondary;
+          font-family: 'Galada', cursive;
+        }
+      }
+
+      &--HONEY {
+        a {
+          color: $honey-ternary;
+        }
+
+        blockquote {
+          border-left: 8px solid $honey-ternary;
+          background-color: rgba(185, 185, 185, 0.1);
+
+          &::before{
+            color: $honey-ternary;
+          }
+        }
+
+        pre {
+          background-color: rgba(185, 185, 185, 0.1);
+        }
+
+        h1 {
+          color: $honey-ternary;
+          font-family: 'Petit Formal Script', cursive;
+        }
+
+        h2 {
+          color: $honey-secondary;
+          font-family: 'Petit Formal Script', cursive;
+        }
+      }
+
+      &--NIGHT_SKY {
+        a {
+          color: $night-sky-ternary;
+        }
+
+        blockquote {
+          border-left: 8px solid $night-sky-ternary;
+          background-color: rgba(255, 255, 255, 0.1);
+
+          &::before{
+            color: $night-sky-ternary;
+          }
+        }
+
+        pre {
+          background-color: rgba(0, 0, 0, 0.15);
+        }
+
+        h1 {
+          color: $night-sky-secondary;
+          font-family: 'Bebas Neue', cursive;
+        }
+
+        h2 {
+          color: $night-sky-ternary;
+          font-family: 'Bebas Neue', cursive;
+        }
+      }
+
+      &--SAND {
+        a {
+          color: $sand-ternary;
+        }
+
+        blockquote {
+          border-left: 8px solid $sand-ternary;
+          background-color: rgba(211, 175, 175, 0.1);
+
+          &::before{
+            color: $sand-ternary;
+          }
+        }
+
+        pre {
+          background-color: rgba(211, 175, 175, 0.2);
+        }
+
+        h1 {
+          color: $sand-secondary;
+          font-family: 'Abril Fatface', cursive;
+        }
+
+        h2 {
+          color: $sand-ternary;
+          font-family: 'Abril Fatface', cursive;
+        }
+      }
+
+      &--BUSINESS {
+        a {
+          color: $business-ternary;
+        }
+
+        blockquote {
+          border-left: 8px solid $business-ternary;
+          background-color: rgba(255, 255, 255, 0.1);
+
+          &::before{
+            color: $business-ternary;
+          }
+        }
+
+        pre {
+          background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        h1 {
+          color: $business-secondary;
+          font-family: 'Lora', serif;
+        }
+
+        h2 {
+          color: $business-ternary;
+          font-family: 'Lora', serif;
+        }
+      }
+    }
+
+    &__title {
+      width: 100%;
+      text-align: center;
+      font-size: 100px;
+      font-family: 'Galada', cursive;
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+
+  .infographics__delete-infographics {
+    display: none;
+  }
+}
+
+.scope__InfographicsSectionPreview {
+  .content__text {
+    margin: calc(10px / #{$infographics-preview-ratio});
+
+    h1, h2 {
+      margin: calc(10px / #{$infographics-preview-ratio}) 0;
+    }
+
+    p {
+      text-align: left;
+    }
+
+    .ql-align-center {
+      text-align: center;
+    }
+
+    .ql-align-right {
+      text-align: right;
+    }
+
+    .ql-align-justify {
+      text-align: justify;
+    }
+
+    pre {
+      text-align: left;
+      padding: calc(10px / #{$infographics-preview-ratio});
+      border-radius: calc(5px / #{$infographics-preview-ratio});
+    }
+
+    blockquote {
+      text-align: left;
+      margin: calc(30px / #{$infographics-preview-ratio}) auto;
+      font-style: italic;
+      padding: 1.2em 10px 1.2em 20px;
+      line-height: 1.6;
+      position: relative;
+      border-left-width: calc(8px / #{$infographics-preview-ratio});
+
+      &::before{
+        content: "\201C";
+        font-size: 4em;
+        position: absolute;
+        left: calc(10px / #{$infographics-preview-ratio});
+        top: calc(-10px / #{$infographics-preview-ratio});
+      }
+    }
+  }
+}

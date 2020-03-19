@@ -1,0 +1,29 @@
+@import '../colors/base-colors';
+
+.scope_InfographicsBuilder {
+  .loader-container {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+
+    .loader {
+      animation: spin linear 2000ms infinite;
+      font-size: 50px;
+    }
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  min-height: 100vh;
+  margin: 0;
+  background-color: $surface-light;
+  overflow: hidden;
+}

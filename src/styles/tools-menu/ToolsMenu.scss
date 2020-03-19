@@ -1,0 +1,12 @@
+@import '../constants/tools-menu-constants';
+@import '../constants/header-constants';
+@import '../colors/base-colors';
+
+.scope__ToolsMenu {
+  width: $tools-menu-width;
+  height: 100vh;
+  background-image: $purple-gradient-to-top;
+  position: fixed;
+  top: $header-height;
+  z-index: 99;
+}

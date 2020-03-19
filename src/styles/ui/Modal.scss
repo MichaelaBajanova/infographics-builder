@@ -1,0 +1,104 @@
+@import '../colors/base-colors';
+
+.scope__Modal {
+  z-index: 998;
+  position: absolute;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.modal {
+  &--small {
+    width: 630px;
+    top: 25%;
+    left: 30%;
+  }
+
+  &--big {
+    width: 800px;
+    top: 25%;
+    left: 25%;
+  }
+
+  &--small-long {
+    width: 630px;
+    height: 555px;
+    top: 15%;
+    left: 30%;
+  }
+
+  &--wide-long {
+    width: 1260px;
+    height: 575px;
+    top: 15%;
+    left: 9%;
+  }
+
+  &__header {
+    height: 25px;
+    padding: 10px;
+    background-image: $purple-gradient-to-right;
+    color: #fff;
+  }
+
+  &__header-text {
+    font-size: inherit;
+    line-height: 5px;
+  }
+
+  &__footer {
+    border-top: 1px solid #f2f2f2;
+    background-color: #fcfcfc;
+  }
+}
+
+.cancel-button {
+  border: none;
+  background-color: transparent;
+  text-decoration: underline;
+  padding: 15px 20px;
+  margin: 10px;
+  color: rgba(0, 0, 0, 0.5);
+
+  &:active {
+    color: rgba(0, 0, 0, 0.75);
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.submit-button {
+  border: none;
+  float: right;
+  background-color: $button-green;
+  color: #fff;
+  font-weight: 600;
+  padding: 15px 20px;
+  margin: 10px;
+  border-radius: 5px;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active {
+    background-color: #00a683;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
+}
