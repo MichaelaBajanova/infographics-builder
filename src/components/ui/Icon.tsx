@@ -2,14 +2,15 @@ import React from 'react';
 
 interface IProps {
     name: string,
+    type: string,
 }
 
 const Icon: React.FC<IProps> = (props) => {
 
-    const {name} = props;
+    const {name, type} = props;
 
     return (
-        <i className="material-icons">{name}</i>
+        <i className={`icon ${type} fa-${name}`} />
     );
 };
 
