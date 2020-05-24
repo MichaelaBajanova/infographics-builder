@@ -1,0 +1,31 @@
+.scope__SelectThemeModal {
+  .modal {
+    &__content {
+      margin: 20px 20px 0 20px;
+      height: 427px;
+      overflow-y: auto;
+
+      label {
+        font-weight: 600;
+        font-size: 20px;
+      }
+
+      .themes {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .help {
+        color: rgba(0, 0, 0, 0.5);
+      }
+
+      .type-sign {
+        font-weight: 600;
+      }
+
+      .type-name {
+        margin-right: 20px;
+      }
+    }
+  }
+}

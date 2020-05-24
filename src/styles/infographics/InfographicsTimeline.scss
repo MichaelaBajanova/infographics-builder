@@ -1,0 +1,40 @@
+@import '../constants/infographics-preview-contants';
+
+$event-date-font-size: 14px;
+$event-text-font-size: 12px;
+
+.scope__InfographicsTimeline {
+  width: 100%;
+
+  .event {
+    &--preview {
+      .event-date {
+        font-size: calc(#{$event-date-font-size} / #{$infographics-preview-ratio})
+      }
+
+      .event-text {
+        font-size: calc(#{$event-text-font-size} / #{$infographics-preview-ratio})
+      }
+    }
+  }
+
+  .event-date {
+    font-size: $event-date-font-size;
+    font-weight: 600;
+  }
+
+  .event-text {
+    font-size: $event-text-font-size;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .scope__InfographicsTimeline {
+    width: 80px;
+    margin: 0 auto;
+
+    .event {
+      width: 30px;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+@import '../constants/tools-menu-constants';
+
+.tools-menu__item {
+  width: 100%;
+  margin: auto;
+  height: $tools-menu-item-height;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  color: #fff;
+  transition: transform 0.13s ease-in-out;
+
+  &:enabled {
+    color: #fff;
+  }
+
+  &:hover {
+    transform: scale(1.25);
+  }
+
+  &:active {
+    opacity: 0.75;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    transform: none;
+  }
+}
+
+.icon {
+  font-size: 17px;
+}

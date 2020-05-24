@@ -1,0 +1,22 @@
+@import '../../colors/base-colors.css';
+
+.scope__CreateTimelineModal {
+  .modal {
+    &__content {
+      display: flex;
+      margin: 0 20px 30px;
+
+      h2 {
+        font-size: 16px;
+      }
+
+      .timeline-settings, .timeline-preview {
+        width: 50%;
+      }
+
+      .timeline-preview {
+        align-content: center;
+      }
+    }
+  }
+}

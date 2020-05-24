@@ -1,0 +1,30 @@
+.scope__CreateBarChartModal, .scope__CreatePieChartModal {
+  .modal {
+    &__content {
+      display: flex;
+      margin: 0 20px 20px 20px;
+
+      h2 {
+        font-size: 16px;
+      }
+
+      .chart-settings, .chart-preview {
+        width: 50%;
+      }
+
+      .chart-preview {
+        margin-top: 20px;
+      }
+
+      .title-input {
+        input {
+          width: 100%;
+        }
+      }
+
+      .scope__Chart {
+        margin-left: 60px;
+      }
+    }
+  }
+}

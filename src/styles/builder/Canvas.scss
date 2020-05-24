@@ -1,0 +1,35 @@
+@import '../colors/base-colors';
+@import '../constants/header-constants';
+@import '../constants/tools-menu-constants';
+
+.scope__Canvas {
+  width: calc(100% - #{$tools-menu-width});
+  height: 100%;
+  overflow-y: auto;
+  position: relative;
+  top: $header-height;
+  left: $tools-menu-width;
+  z-index: 1;
+
+  .infographics {
+    margin: 30px;
+    background-color: #fff;
+    box-shadow: 0 0 15px 0 $surface-dark;
+    border: 1px solid #d1d1d1;
+
+    &--empty {
+      border: none;
+    }
+  }
+
+  .canvas {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &--blurred {
+      filter: blur(5px);
+    }
+  }
+}

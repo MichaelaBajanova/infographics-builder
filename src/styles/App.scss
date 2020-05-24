@@ -1,13 +1,3 @@
-@import './colors/base-colors';
-
-.app {
-  min-height: 100vh;
+.scope__App {
   margin: 0;
-  background-color: $surface-light;
-  font-family: Roboto, sans-serif;
-  overflow: hidden;
-}
-
-.app-wrapper {
-  display: flex;
 }

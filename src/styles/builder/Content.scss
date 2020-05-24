@@ -1,0 +1,11 @@
+.scope__Content {
+  .content {
+    display: flex;
+    position: absolute;
+    width: 100%;
+
+    &--blurred {
+      filter: blur(5px);
+    }
+  }
+}

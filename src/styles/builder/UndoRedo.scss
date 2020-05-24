@@ -1,0 +1,30 @@
+.scope__UndoRedo {
+  margin: 3px 0 0 10px;
+  display: flex;
+  align-items: center;
+
+  button {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    color: #fff;
+    transition: transform 0.13s ease-in-out;
+
+    &:enabled {
+      color: #fff;
+    }
+
+    &:hover {
+      transform: scale(1.25);
+    }
+
+    &:active {
+      opacity: 0.75;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      transform: none;
+    }
+  }
+}

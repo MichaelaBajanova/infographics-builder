@@ -1,5 +1,5 @@
-// this interface describes infographics section and will be probably used for holding data
-// interface describing layout of infographics can be found in ILayoutSection
+import {IInfographicsContent} from 'types/IInfographicsContent'
+
 export interface IInfographicsSection {
     id: number,
     position: {
@@ -11,7 +11,10 @@ export interface IInfographicsSection {
         end: number,
     },
     widthPercent: number,
+    widthPx: number,
+    heightPx: number,
     isActive: boolean,
+    content?: IInfographicsContent,
 }
 
 export interface IInfographicsRow {
