@@ -56,7 +56,7 @@
   "devDependencies": {
     "cypress": "4.2.0",
     "@fortawesome/fontawesome-free": "^5.12.0",
-    "eslint-config-airbnb": "18.0.1",
+    "eslint-config-airbnb": "18.1.0",
     "eslint-plugin-import": "2.20.1",
     "eslint-plugin-jsx-a11y": "6.2.3",
     "eslint-plugin-react": "7.19.0",
